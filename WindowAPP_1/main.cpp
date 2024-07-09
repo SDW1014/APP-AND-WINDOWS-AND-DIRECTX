@@ -1,22 +1,29 @@
-﻿// 앞으로 내가 //을 치면 이게 뭔지에 대해 설명을해주면됨 
+﻿// title : WindowAPP_1.cpp : 응용 프로그램에 대한 진입점을 정의합니다.
+// explanation : 이 파일에는 'main' 함수가 포함되어 있으며 프로그램 실행이 시작됩니다. 또한 이 파일에는 프로젝트에 필요한 추가 함수가 포함되어 있습니다.
+// author : SDW
+// date : 2024-07-09
 
 #include "framework.h"        // 프레임워크 헤더파일을 포함한다. 프레임워크란? :  
 #include "WindowAPP_1.h" 	  // WindowAPP_1 헤더파일을 포함한다.
 
-#define MAX_LOADSTRING 100
+#define MAX_LOADSTRING 100    // 문자열의 최대 길이를 정의한다.
 
-// 전역 변수:
+// 전역 변수 ==================================================================
 HINSTANCE hInst;                                // 현재 인스턴스입니다.
 WCHAR szTitle[MAX_LOADSTRING];                  // 제목 표시줄 텍스트입니다.
 WCHAR szWindowClass[MAX_LOADSTRING];            // 기본 창 클래스 이름입니다.
+// 전역 변수 끝 ===============================================================
 
+// 전역 함수 ==================================================================
 // 이 코드 모듈에 포함된 함수의 선언을 전달합니다:
-ATOM                MyRegisterClass(HINSTANCE hInstance);
-BOOL                InitInstance(HINSTANCE, int);
-LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);
+ATOM                MyRegisterClass(HINSTANCE hInstance);  //ATOM이란 ? : 
+BOOL                InitInstance(HINSTANCE, int);  
+LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);  
 INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);
+// 전역 함수 끝 ===============================================================
 
-int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
+// main 함수 시작 =============================================================
+int APIENTRY wWinMain(_In_ HINSTANCE hInstance, 
                      _In_opt_ HINSTANCE hPrevInstance,
                      _In_ LPWSTR    lpCmdLine,
                      _In_ int       nCmdShow)
@@ -53,14 +60,12 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
     return (int) msg.wParam;
 }
+// main 함수 끝 =============================================================
 
 
-
-//
+// 전역 함수 정의 시작 =============================================================
 //  함수: MyRegisterClass()
-//
 //  용도: 창 클래스를 등록합니다.
-//
 ATOM MyRegisterClass(HINSTANCE hInstance)
 {
     WNDCLASSEXW wcex;
@@ -82,16 +87,11 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
     return RegisterClassExW(&wcex);
 }
 
-//
 //   함수: InitInstance(HINSTANCE, int)
-//
 //   용도: 인스턴스 핸들을 저장하고 주 창을 만듭니다.
-//
 //   주석:
-//
 //        이 함수를 통해 인스턴스 핸들을 전역 변수에 저장하고
 //        주 프로그램 창을 만든 다음 표시합니다.
-//
 BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 {
    hInst = hInstance; // 인스턴스 핸들을 전역 변수에 저장합니다.
@@ -110,16 +110,14 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
    return TRUE;
 }
 
-//
 //  함수: WndProc(HWND, UINT, WPARAM, LPARAM)
-//
+// 
+//  HWND hWnd : 윈도우 핸들, UINT message : 메시지, WPARAM wParam : 메시지의 부가정보, LPARAM lParam : 메시지의 부가정보
+// 
 //  용도: 주 창의 메시지를 처리합니다.
-//
 //  WM_COMMAND  - 애플리케이션 메뉴를 처리합니다.
 //  WM_PAINT    - 주 창을 그립니다.
 //  WM_DESTROY  - 종료 메시지를 게시하고 반환합니다.
-//
-//
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
     switch (message)
@@ -177,3 +175,16 @@ INT_PTR CALLBACK About(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
     }
     return (INT_PTR)FALSE;
 }
+
+// 전역 함수 정의 끝 =============================================================
+
+// 프로그램 실행 순서 =============================================================
+// 1. wWinMain() 함수가 실행된다.
+// 2. MyRegisterClass() 함수가 실행된다.
+// 3. InitInstance() 함수가 실행된다.
+// 4. WndProc() 함수가 실행된다.
+// 5. About() 함수가 실행된다.
+// 6. 메시지 루프가 실행된다.
+// 7. PostQuitMessage() 함수가 실행된다.
+// 8. wWinMain() 함수가 종료된다.
+// 프로그램 실행 순서 끝 =============================================================
