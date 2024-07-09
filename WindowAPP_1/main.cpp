@@ -16,7 +16,7 @@ WCHAR szWindowClass[MAX_LOADSTRING];            // 기본 창 클래스 이름�
 
 // 전역 함수 ==================================================================
 // 이 코드 모듈에 포함된 함수의 선언을 전달합니다:
-ATOM                MyRegisterClass(HINSTANCE hInstance);  //ATOM이란 ? : 
+ATOM                MyRegisterClass(HINSTANCE hInstance); // what is Atom class ? : 한글로 : 원자 클래스
 BOOL                InitInstance(HINSTANCE, int);  
 LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);  
 INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);
