@@ -270,6 +270,26 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             DeleteObject(redPen);                                   // 빨간 펜을 삭제한다.
 
 			DeleteObject(blueBrush);                                // 파란 브러쉬를 삭제한다.
+
+            // 기본으로 자주사용 되는 GDI오브젝트를 미리 DC안에 만들어 두었다. 
+            // 그 오브젝트들을 스톡 오브젝트라고 한다. 
+            // BALCK_BRUSH : 검은색 브러쉬
+            // WHITE_BRUSH : 흰색 브러쉬
+            // GRAY_BRUSH : 회색 브러쉬
+            // LTGRAY_BRUSH : 밝은 회색 브러쉬 등 이러한 것들이 있다.
+
+            // 스톡오브젝트를 사용해 봅시다. 
+
+            HBRUSH grayBrush = (HBRUSH)GetStockObject(GRAY_BRUSH);  // 회색 브러쉬를 가져온다.
+
+            HBRUSH oldBrush2 = (HBRUSH)SelectObject(hdc, grayBrush);// 올드 브러쉬를 선택한다.
+
+            Rectangle(hdc, 400, 400, 500, 500);                     // 300, 300의 위치서 400, 400 위치의 사각형을 그린다.
+
+            SelectObject(hdc, oldBrush2);                           // 올드 브러쉬를 선택한다.
+
+            DeleteObject(grayBrush);                                // 회색 브러쉬를 삭제한다.
+
             // 그리기 코드 끝 =============================================================
             
             EndPaint(hWnd, &ps);
