@@ -245,13 +245,20 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             // 어떤 폰트를 사용할건가? , 어떤 선의 굵기를 정해줄건가 어떤 색상으로 그려줄건가 등...
             // 화면 출력에 필요한 모든 경우는 WINAPI에서는 DC를 통해서 작업을 진행할 수 있다. 
 
-            HBRUSH brush = CreateSolidBrush(RGB(9, 0, 255));    // 0, 0, 255의 색상을 가지는 브러쉬를 생성한다.
+            HBRUSH brush = CreateSolidBrush(RGB(0, 0, 255));    // 0, 0, 255의 색상을 가지는 브러쉬를 생성한다.
+
+            HBRUSH oldBrush = (HBRUSH)SelectObject(hdc, brush); // 올드 브러쉬를 선택한다.
 
             SelectObject(hdc, brush);                           // 브러쉬를 선택한다.
 
             Rectangle(hdc, 100, 100, 200, 200);                 // 100, 100의 위치서 200, 200 위치의 사각형을 그린다.
 
+            (HBRUSH)SelectObject(hdc, oldBrush);                // 올드 브러쉬를 선택한다.
+
             Ellipse(hdc, 200, 200, 300 , 300);                  // 100, 100의 위치서 200, 200 위치의 원을 그린다.
+
+			DeleteObject(brush);                                // 브러쉬를 삭제한다.
+
 
             // TODO: 여기에 hdc를 사용하는 그리기 코드를 추가합니다...
             EndPaint(hWnd, &ps);
