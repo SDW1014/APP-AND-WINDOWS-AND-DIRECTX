@@ -250,6 +250,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             HBRUSH brush = CreateSolidBrush(RGB(0, 0, 255));    // 0, 0, 255의 색상을 가지는 브러쉬를 생성한다.
 
             HBRUSH oldBrush = (HBRUSH)SelectObject(hdc, brush); // 올드 브러쉬를 선택한다.
+            // [SWD 질문] 반환을 이전의 브러쉬를 가져오나보지? 
+            // [대답] 네 맞아요. 이전의 브러쉬를 가져오기 위해서 올드 브러쉬를 선택한다.
 
             SelectObject(hdc, brush);                           // 브러쉬를 선택한다.
 
