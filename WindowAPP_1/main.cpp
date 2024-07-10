@@ -74,8 +74,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
         }
         else
         {
-            // 메세지가 없을 경우
-
+            // 메세지가 없을 경우는 이곳에서 처리가 된다. 
+            // 특히 게임 로직이 들어가면 된다.
         }
     }
 
