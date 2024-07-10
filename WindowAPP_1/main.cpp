@@ -51,12 +51,31 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     MSG msg;
 
     // 기본 메시지 루프
-    while (GetMessage(&msg, nullptr, 0, 0))
+    // GetMessage(&msg, nullptr, 0, 0)
+    // 프로세스에서 발생한 메세지를 메시지 큐에서 가져오는 함수 
+    // 메시지 큐에 메시지가 없으면 대기한다.
+
+    // PeakMessage : 메시지 큐에 메시지가 없어도 바로 리턴한다.
+    // 리턴 값이 true인 경우 메시지가 있고 false인 경우 메세지가 없다고 가르쳐준다.
+    
+    while (true)
     {
-        if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg))
+        if (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE))
         {
-            TranslateMessage(&msg);
-            DispatchMessage(&msg);
+            if(msg.message == WM_QUIT)
+			{
+				break;
+			}
+            if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg))
+            {
+                TranslateMessage(&msg);
+                DispatchMessage(&msg);
+            }
+        }
+        else
+        {
+            // 메세지가 없을 경우
+
         }
     }
 
