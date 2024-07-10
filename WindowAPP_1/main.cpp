@@ -1,7 +1,7 @@
 ﻿// title : WindowAPP_1.cpp : 응용 프로그램에 대한 진입점을 정의합니다.
 // explanation : 이 프로젝트는 Window전용 APP을 생성하는 것의 기본이 되는 프로젝트이다.
 // author : SDW
-// date : 2024-07-09
+// date : 2024-07-10
 
 #include "framework.h"        // 프레임워크 헤더파일을 포함한다. 프레임워크란? :  
 #include "WindowAPP_1.h" 	  // WindowAPP_1 헤더파일을 포함한다.
