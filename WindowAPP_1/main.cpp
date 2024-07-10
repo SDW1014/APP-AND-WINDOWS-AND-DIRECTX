@@ -259,7 +259,15 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 
             (HBRUSH)SelectObject(hdc, oldBrush);                    // 올드 브러쉬를 선택한다.
 
+            HPEN redPen = CreatePen(PS_SOLID, 2, RGB(255, 0, 0));   // 빨간 색상을 가지는 펜을 생성한다.
+
+            HPEN oldPen = (HPEN)SelectObject(hdc, redPen);          // 올드 펜을 선택한다.
+
             Ellipse(hdc, 200, 200, 300 , 300);                      // 100, 100의 위치서 200, 200 위치의 원을 그린다.
+
+            SelectObject(hdc, oldPen);                              // 올드 펜을 선택한다.
+
+            DeleteObject(redPen);                                   // 빨간 펜을 삭제한다.
 
 			DeleteObject(blueBrush);                                // 파란 브러쉬를 삭제한다.
             // 그리기 코드 끝 =============================================================
