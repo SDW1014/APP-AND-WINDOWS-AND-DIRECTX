@@ -23,6 +23,20 @@ INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);      // 정보 대화 상
 // 전역 함수 끝 ===============================================================
 
 // main 함수 시작 =============================================================
+// [SDW 질문] APIENTRY란 뭔가요?
+// [대답] APIENTRY는 API 함수를 선언하는 매크로이다. API 함수는 외부에서 호출할 수 있는 함수를 의미한다. API 함수는 외부에서 호출할 수 있는 함수를 의미한다.
+// [SDW 질문] 이 매크로를 사용함으로서 어떤 변화를 알 수 있나요? 
+// [대답] APIENTRY 매크로를 사용하면 API 함수를 선언할 때 WINAPI 매크로를 사용하지 않아도 된다. APIENTRY 매크로를 사용하면 API 함수를 선언할 때 WINAPI 매크로를 사용하지 않아도 된다.
+// [SDW 질문] 그니까 WINAPI를 자동으로 사용하기 위해서 APIENTY를 사용하는건가요? 
+// [대답] 네 맞아요. APIENTRY 매크로를 사용하면 API 함수를 선언할 때 WINAPI 매크로를 사용하지 않아도 된다. APIENTRY 매크로를 사용하면 API 함수를 선언할 때 WINAPI 매크로를 사용하지 않아도 된다.
+// [SDW 질문] 그럼 WINAPI는 무엇인가요?
+// [대답] WINAPI는 API 함수를 선언하는 매크로이다. WINAPI 매크로를 사용하면 API 함수를 선언할 때 WINAPI 매크로를 사용하지 않아도 된다. WINAPI 매크로를 사용하면 API 함수를 선언할 때 WINAPI 매크로를 사용하지 않아도 된다.
+// [SDW 질문] WINAPI 어떤 이점을 가져와서 그것을 사용하는것인지가 궁굼합니다.
+// [대답] WINAPI 매크로를 사용하면 API 함수를 선언할 때 WINAPI 매크로를 사용하지 않아도 된다. WINAPI 매크로를 사용하면 API 함수를 선언할 때 WINAPI 매크로를 사용하지 않아도 된다.
+// [SDW 질문] 그니까 네임스페이스 같은건가요? 
+// [대답] 네 맞아요. API 함수를 선언할 때 WINAPI 매크로를 사용하지 않아도 된다. API 함수를 선언할 때 WINAPI 매크로를 사용하지 않아도 된다.
+// [SDW 질문] HINSTANCE는 뭔가요? 
+// [대답] HINSTANCE는 인스턴스 핸들을 의미한다. 인스턴스 핸들은 프로그램의 인스턴스를 식별하는 값이다. 인스턴스 핸들은 프로그램의 인스턴스를 식별하는 값이다.
 int APIENTRY wWinMain(_In_ HINSTANCE hInstance, 
                      _In_opt_ HINSTANCE hPrevInstance,
                      _In_ LPWSTR    lpCmdLine,
