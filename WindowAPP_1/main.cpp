@@ -247,21 +247,21 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 
             // TODO: 여기에 hdc를 사용하는 그리기 코드를 추가합니다...
             // 그리기 코드 시작 =============================================================
-            HBRUSH brush = CreateSolidBrush(RGB(0, 0, 255));    // 0, 0, 255의 색상을 가지는 브러쉬를 생성한다.
+            HBRUSH blueBrush = CreateSolidBrush(RGB(0, 0, 255));    // 파란 색상을 가지는 브러쉬를 생성한다.
 
-            HBRUSH oldBrush = (HBRUSH)SelectObject(hdc, brush); // 올드 브러쉬를 선택한다.
+            HBRUSH oldBrush = (HBRUSH)SelectObject(hdc, blueBrush); // 올드 브러쉬를 선택한다.
             // [SWD 질문] 반환을 이전의 브러쉬를 가져오나보지? 
             // [대답] 네 맞아요. 이전의 브러쉬를 가져오기 위해서 올드 브러쉬를 선택한다.
 
-            SelectObject(hdc, brush);                           // 브러쉬를 선택한다.
+            SelectObject(hdc, blueBrush);                           // 파란 브러쉬를 선택한다.
 
-            Rectangle(hdc, 100, 100, 200, 200);                 // 100, 100의 위치서 200, 200 위치의 사각형을 그린다.
+            Rectangle(hdc, 100, 100, 200, 200);                     // 100, 100의 위치서 200, 200 위치의 사각형을 그린다.
 
-            (HBRUSH)SelectObject(hdc, oldBrush);                // 올드 브러쉬를 선택한다.
+            (HBRUSH)SelectObject(hdc, oldBrush);                    // 올드 브러쉬를 선택한다.
 
-            Ellipse(hdc, 200, 200, 300 , 300);                  // 100, 100의 위치서 200, 200 위치의 원을 그린다.
+            Ellipse(hdc, 200, 200, 300 , 300);                      // 100, 100의 위치서 200, 200 위치의 원을 그린다.
 
-			DeleteObject(brush);                                // 브러쉬를 삭제한다.
+			DeleteObject(blueBrush);                                // 파란 브러쉬를 삭제한다.
             // 그리기 코드 끝 =============================================================
             
             EndPaint(hWnd, &ps);
