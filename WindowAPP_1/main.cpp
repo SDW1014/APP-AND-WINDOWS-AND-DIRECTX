@@ -28,8 +28,11 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
                      _In_ LPWSTR    lpCmdLine,
                      _In_ int       nCmdShow)
 {
-    UNREFERENCED_PARAMETER(hPrevInstance);  // 사용되지 않는 매개 변수를 표시한다.
-    UNREFERENCED_PARAMETER(lpCmdLine);	    // 사용되지 않는 매개 변수를 표시한다.
+    // 매개 변수 사용되지 않았음을 표시
+    // [SDW 질문] 왜 사용되지 않음을 표시하나요? 
+    // [대답] 사용되지 않는 매개 변수를 표시하는 이유는 컴파일러에게 경고를 표시하지 않도록 하기 위해서이다. 사용되지 않는 매개 변수를 표시하는 이유는 컴파일러에게 경고를 표시하지 않도록 하기 위해서이다.
+    UNREFERENCED_PARAMETER(hPrevInstance);  
+    UNREFERENCED_PARAMETER(lpCmdLine);
 
     // TODO: 여기에 코드를 입력합니다.
 
@@ -68,7 +71,15 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     // [대답] 네 맞아요. 메시지 루프는 메시지를 받아들이고 처리하는 루프이다. 메시지 루프는 GetMessage() 함수를 사용하여 메시지를 받아들이고, DispatchMessage() 함수를 사용하여 메시지를 처리한다.
     MSG msg;
 
-    // 기본 메시지 루프입니다:
+    // 기본 메시지 루프
+    // [SDW 질문] GetMessage() 함수는 무슨 역할을 하는 함수인가요?
+    // [대답] GetMessage() 함수는 메시지 큐에서 메시지를 가져오는 함수이다. GetMessage() 함수는 메시지 큐에서 메시지를 가져오는 함수이다.
+    // [SDW 질문] 그러면 이건, 실시간 용은 아닌거지? 
+    // [대답] 네 맞아요. GetMessage() 함수는 메시지 큐에서 메시지를 가져오는 함수이다. GetMessage() 함수는 메시지 큐에서 메시지를 가져오는 함수이다.
+    // [SDW 질문] 그럼 인제 실시간 반응형으로 만들려면 어떻게 해야할까? 
+    // [대답] 실시간 반응형으로 만들려면 PeekMessage() 함수를 사용하면 된다. PeekMessage() 함수는 메시지 큐에서 메시지를 가져오는 함수이다.
+    // [SDW 질문] 보통 게임은 PeekMessage()를 사용해야지? 
+    // [대답] 네 맞아요. 게임은 PeekMessage() 함수를 사용하여 메시지를 처리한다. PeekMessage() 함수는 메시지 큐에서 메시지를 가져오는 함수이다.
     while (GetMessage(&msg, nullptr, 0, 0))
     {
         if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg))
