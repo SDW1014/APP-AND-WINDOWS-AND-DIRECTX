@@ -42,11 +42,13 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     MyRegisterClass(hInstance);
 
     // 애플리케이션 초기화를 수행합니다:
-    if (!InitInstance (hInstance, nCmdShow))
+    if (!InitInstance (hInstance, nCmdShow)) // InitInstance() 함수가 성공적으로 실행되면 TRUE를 반환하고, 실패하면 FALSE를 반환한다.
     {
-        return FALSE;
+        return FALSE; 
     }
 
+    // 가속기 테이블을 로드한다.
+    // 가속기 테이블이란? : 가속기 테이블은 키보드의 단축키를 지정하는 테이블이다. 가속기 테이블을 사용하면 메뉴나 버튼을 클릭하지 않고도 키보드로 명령을 실행할 수 있다.
     HACCEL hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_WINDOWAPP1));
 
     MSG msg;
