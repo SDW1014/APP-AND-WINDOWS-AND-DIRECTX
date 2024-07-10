@@ -28,14 +28,17 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
                      _In_ LPWSTR    lpCmdLine,
                      _In_ int       nCmdShow)
 {
-    UNREFERENCED_PARAMETER(hPrevInstance);
-    UNREFERENCED_PARAMETER(lpCmdLine);
+    UNREFERENCED_PARAMETER(hPrevInstance);  // 사용되지 않는 매개 변수를 표시한다.
+    UNREFERENCED_PARAMETER(lpCmdLine);	    // 사용되지 않는 매개 변수를 표시한다.
 
     // TODO: 여기에 코드를 입력합니다.
 
     // 전역 문자열을 초기화합니다.
-    LoadStringW(hInstance, IDS_APP_TITLE, szTitle, MAX_LOADSTRING);
-    LoadStringW(hInstance, IDC_WINDOWAPP1, szWindowClass, MAX_LOADSTRING);
+    // LoadStringW를 사용하는 이유는? 
+    // LoadStringW 함수는 리소스 문자열을 로드하는 함수이다. 리소스 문자열은 리소스 파일에 저장되어 있으며, 리소스 파일은 리소스 편집기를 사용하여 만들 수 있다.
+    // 무슨 이유 때문에? : 리소스 문자열을 사용하면 프로그램의 다국어 지원이 쉬워진다. 리소스 문자열을 사용하면 프로그램의 다국어 지원이 쉬워진다.
+    LoadStringW(hInstance, IDS_APP_TITLE, szTitle, MAX_LOADSTRING);         // 각각의 인수 : hInstance : 인스턴스 핸들, IDS_APP_TITLE : "WindowAPP_1" 문자열을 가져온다, szTitle : "WindowAPP_1" 문자열을 저장할 변수, MAX_LOADSTRING : 문자열의 최대 길이
+    LoadStringW(hInstance, IDC_WINDOWAPP1, szWindowClass, MAX_LOADSTRING);  // 각각의 인수 : hInstance : 인스턴스 핸들, IDC_WINDOWAPP1 : "WindowAPP_1" 문자열을 가져온다, szWindowClass : "WindowAPP_1" 문자열을 저장할 변수, MAX_LOADSTRING : 문자열의 최대 길이
     MyRegisterClass(hInstance);
 
     // 애플리케이션 초기화를 수행합니다:
