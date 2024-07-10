@@ -41,13 +41,17 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     LoadStringW(hInstance, IDC_WINDOWAPP1, szWindowClass, MAX_LOADSTRING);  // 각각의 인수 : hInstance : 인스턴스 핸들, IDC_WINDOWAPP1 : "WindowAPP_1" 문자열을 가져온다, szWindowClass : "WindowAPP_1" 문자열을 저장할 변수, MAX_LOADSTRING : 문자열의 최대 길이
     MyRegisterClass(hInstance);
 
-    // 애플리케이션 초기화를 수행합니다:
+    // 애플리케이션 초기화
+    // [SDW 질문] 에플리케이션이란 뭔가요? 
+    // [대답] 애플리케이션은 사용자가 사용하는 프로그램을 의미한다. 애플리케이션은 사용자가 사용하는 프로그램을 의미한다.
+    // [SDW 질문] 그럼 window에서의 어플리케이션과의 관계는 어떤건가요? 
+    // [대답] 윈도우에서의 애플리케이션은 사용자가 사용하는 프로그램을 의미한다. 윈도우에서의 애플리케이션은 사용자가 사용하는 프로그램을 의미한다.
     if (!InitInstance (hInstance, nCmdShow)) // InitInstance() 함수가 성공적으로 실행되면 TRUE를 반환하고, 실패하면 FALSE를 반환한다.
     {
         return FALSE; 
     }
 
-    // 가속기 테이블을 로드한다.
+    // 가속기 테이블을 로드
     // [SDW 질문] 가속기 테이블이란?
     // [대답] 가속기 테이블은 키보드의 단축키를 지정하는 테이블이다. 가속기 테이블을 사용하면 메뉴나 버튼을 클릭하지 않고도 키보드로 명령을 실행할 수 있다.
     // [SDW 질문] 어떤 원리지?
@@ -57,7 +61,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     // [SDW 질문] 그니까 그런거네, 가속기 테이블 자체는 테이블인건데, 그 테이블에 맞는 단축키를 지정해서 뿌려준다 라는 개념? 맞아? : 네 맞아요.
     HACCEL hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_WINDOWAPP1)); // 각각의 인수 : hInstance : 인스턴스 핸들, MAKEINTRESOURCE(IDC_WINDOWAPP1) : 가속기 테이블을 가져온다.
 
-    // 메시지 루프를 실행한다:
+    // 메시지 루프를 실행
     // [SDW 질문] 메시지 루프란? 
     // [대답] 메시지 루프는 윈도우 프로그램이 메시지를 받아들이고 처리하는 루프이다. 메시지 루프는 GetMessage() 함수를 사용하여 메시지를 받아들이고, DispatchMessage() 함수를 사용하여 메시지를 처리한다.
     // [SDW 질문] 그니까 한마디로, 위의 테이블도 사용하는거지? 
