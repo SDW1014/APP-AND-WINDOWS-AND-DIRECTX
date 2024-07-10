@@ -245,6 +245,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             // 어떤 폰트를 사용할건가? , 어떤 선의 굵기를 정해줄건가 어떤 색상으로 그려줄건가 등...
             // 화면 출력에 필요한 모든 경우는 WINAPI에서는 DC를 통해서 작업을 진행할 수 있다. 
 
+            Rectangle(hdc, 100, 100, 200, 200); // 100, 100의 위치에 200, 200의 크기로 사각형을 그린다.
+
 
             // TODO: 여기에 hdc를 사용하는 그리기 코드를 추가합니다...
             EndPaint(hWnd, &ps);
