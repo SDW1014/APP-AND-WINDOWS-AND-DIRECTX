@@ -1,4 +1,4 @@
-﻿// title : WindowAPP_1.cpp : 응용 프로그램에 대한 진입점을 정의합니다.
+﻿// title : Window APP 프로그램에 대한 진입점을 정의합니다.
 // explanation : 이 프로젝트는 Window전용 APP을 생성하는 것의 기본이 되는 프로젝트이다.
 // author : SDW
 // date : 2024-07-10
@@ -16,10 +16,10 @@ WCHAR szWindowClass[MAX_LOADSTRING];            // 기본 창 클래스 이름�
 
 // 전역 함수 ==================================================================
 // 이 코드 모듈에 포함된 함수의 선언을 전달합니다:
-ATOM                MyRegisterClass(HINSTANCE hInstance); // what is Atom class ? : 한글로 : 원자 클래스
-BOOL                InitInstance(HINSTANCE, int);  
-LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);  
-INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);
+ATOM                MyRegisterClass(HINSTANCE hInstance);   // 창 클래스를 등록한다.
+BOOL                InitInstance(HINSTANCE, int);           // 인스턴스 핸들을 저장하고 주 창을 만든다.  
+LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);    // 주 창의 메시지를 처리한다.
+INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);      // 정보 대화 상자의 메시지 처리기이다.
 // 전역 함수 끝 ===============================================================
 
 // main 함수 시작 =============================================================
@@ -64,8 +64,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
 
 // 전역 함수 정의 시작 =============================================================
-//  함수: MyRegisterClass()
-//  용도: 창 클래스를 등록합니다.
+//   함수: MyRegisterClass()
+//   용도: 창 클래스를 등록합니다.
 ATOM MyRegisterClass(HINSTANCE hInstance)
 {
     WNDCLASSEXW wcex;
