@@ -116,23 +116,65 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
 // 전역 함수 정의 시작 =============================================================
 //   함수: MyRegisterClass()
-//   용도: 창 클래스를 등록합니다.
+//   용도: 창 클래스를 등록
 ATOM MyRegisterClass(HINSTANCE hInstance)
 {
+    // 창 클래스 구조체를 초기화한다.
     WNDCLASSEXW wcex;
 
+    // 창 클래스 구조체를 초기화한다.
+    // [SDW 질문] 왜 사이즈를 초기화할까? 
+    // [대답] 사이즈를 초기화하는 이유는 구조체의 크기를 설정하기 위해서이다. 사이즈를 초기화하는 이유는 구조체의 크기를 설정하기 위해서이다.
+    // [SDW 질문] 왜 이런 특수한 함수를 사용해서 초기화를 할까? 
+    // [대답] 특수한 함수를 사용하여 초기화하는 이유는 구조체의 크기를 설정하기 위해서이다. 특수한 함수를 사용하여 초기화하는 이유는 구조체의 크기를 설정하기 위해서이다.
+    // [SDW 질문] 그럼 왜 구조체의 크기를 설정해야 하는건가요?
+    // [대답] 구조체의 크기를 설정하는 이유는 구조체의 크기를 설정하기 위해서이다. 구조체의 크기를 설정하는 이유는 구조체의 크기를 설정하기 위해서이다.
+    // [SDW 질문] 그니까 왜 구조체를 근본적을 ㅗ그렇게 사이즈를 미리 정해놔야 하냐는거임 안하면 어떻게됨? 
+    // [대답] 구조체의 크기를 설정하지 않으면 구조체의 크기가 잘못 계산될 수 있기 때문에 구조체의 크기를 설정해야 한다. 구조체의 크기를 설정하지 않으면 구조체의 크기가 잘못 계산될 수 있기 때문에 구조체의 크기를 설정해야 한다.
+    // [SDW 질문] 그니까 잘봐봐 int A 이렇게하면 그냥 다들 정수형이구나 알잖아 그래서 거기다가 범위를 넘지 않는 선에서 값을 넣는거고 근데 이부분에서는 사이즈까지 조정한다 이부분이 이상하다는거야 뭘위해서? 
+    // [대답] 구조체의 크기를 설정하는 이유는 구조체의 크기를 설정하기 위해서이다. 구조체의 크기를 설정하는 이유는 구조체의 크기를 설정하기 위해서이다.
+    // [SDW 질문] 그렇다면 sizeof가 필요하다는건 운영체제 특히 16비트 32비트 64비트와 같이 유동적인 데이터 유형에 대해서 대응한다 라고 생각하면 되는거야? 
+    // ***[대답] 네 맞아요. 구조체의 크기를 설정하는 이유는 구조체의 크기를 설정하기 위해서이다. 구조체의 크기를 설정하는 이유는 구조체의 크기를 설정하기 위해서이다.***
+    // 내가봐도 똑똑한 질문이었다 크으
     wcex.cbSize = sizeof(WNDCLASSEX);
 
+    // 창 클래스 구조체를 초기화한다.
+    // [SDW 질문] style은 어떤건가요 설정을 하면 어떻게 변하는지에 대해서도 간단하게 소개해주세요.
+    // [대답] style은 창의 스타일을 설정하는 값이다. CS_HREDRAW는 창의 너비가 변경될 때 창을 다시 그리는 스타일이다. CS_VREDRAW는 창의 높이가 변경될 때 창을 다시 그리는 스타일이다.
     wcex.style          = CS_HREDRAW | CS_VREDRAW;
+    // [SDW 질문] lpfnWndProc는 무엇인가요?
+    // [대답] lpfnWndProc는 창의 메시지 처리 함수의 주소를 설정하는 값이다. lpfnWndProc는 창의 메시지 처리 함수의 주소를 설정하는 값이다.
+    // [SDW 질문] 그니까 창의 메시지 처리 함수의 주소를 설정한다는건 그곳의 있는 함수를 사용한다는 뜻이지? 
+    // [대답] 네 맞아요. lpfnWndProc는 창의 메시지 처리 함수의 주소를 설정하는 값이다. lpfnWndProc는 창의 메시지 처리 함수의 주소를 설정하는 값이다.
     wcex.lpfnWndProc    = WndProc;
+    // [SDW 질문] cbClsExtra는 무엇인가요?
+    // [대답] cbClsExtra는 클래스의 여분 바이트 수를 설정하는 값이다. cbClsExtra는 클래스의 여분 바이트 수를 설정하는 값이다.
     wcex.cbClsExtra     = 0;
+    // [SDW 질문] cbWndExtra는 무엇인가요?
+    // [대답] cbWndExtra는 창의 여분 바이트 수를 설정하는 값이다. cbWndExtra는 창의 여분 바이트 수를 설정하는 값이다.
     wcex.cbWndExtra     = 0;
+    // [SDW 질문] hInstance는 무엇인가요?
+    // [대답] hInstance는 인스턴스 핸들을 설정하는 값이다. hInstance는 인스턴스 핸들을 설정하는 값이다.
     wcex.hInstance      = hInstance;
+    // [SDW 질문] hIcon는 무엇인가요?
+    // [대답] hIcon는 아이콘 핸들을 설정하는 값이다. hIcon는 아이콘 핸들을 설정하는 값이다.
     wcex.hIcon          = LoadIcon(hInstance, MAKEINTRESOURCE(IDI_WINDOWAPP1));
+    // [SDW 질문] hCursor는 무엇인가요?
+    // [대답] hCursor는 커서 핸들을 설정하는 값이다. hCursor는 커서 핸들을 설정하는 값이다.
+    // [SDW 질문] 커서는 무엇이고 핸들은 무엇인가요? 
+    // [대답] 커서는 마우스 포인터를 의미하고, 핸들은 커서를 식별하는 값이다. 커서는 마우스 포인터를 의미하고, 핸들은 커서를 식별하는 값이다.
     wcex.hCursor        = LoadCursor(nullptr, IDC_ARROW);
+    // [SDW 질문] hbrBackground는 무엇인가요?
+    // [대답] hbrBackground는 배경색을 설정하는 값이다. hbrBackground는 배경색을 설정하는 값이다.
     wcex.hbrBackground  = (HBRUSH)(COLOR_WINDOW+1);
+    // [SDW 질문] lpszMenuName은 무엇인가요?
+    // [대답] lpszMenuName은 메뉴 이름을 설정하는 값이다. lpszMenuName은 메뉴 이름을 설정하는 값이다.
     wcex.lpszMenuName   = MAKEINTRESOURCEW(IDC_WINDOWAPP1);
+    // [SDW 질문] lpszClassName은 무엇인가요?
+    // [대답] lpszClassName은 클래스 이름을 설정하는 값이다. lpszClassName은 클래스 이름을 설정하는 값이다.
     wcex.lpszClassName  = szWindowClass;
+    // [SDW 질문] hIconSm은 무엇인가요?
+    // [대답] hIconSm은 작은 아이콘 핸들을 설정하는 값이다. hIconSm은 작은 아이콘 핸들을 설정하는 값이다.
     wcex.hIconSm        = LoadIcon(wcex.hInstance, MAKEINTRESOURCE(IDI_SMALL));
 
     return RegisterClassExW(&wcex);
