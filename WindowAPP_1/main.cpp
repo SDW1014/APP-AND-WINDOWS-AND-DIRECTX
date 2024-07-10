@@ -1,5 +1,5 @@
 ﻿// title : WindowAPP_1.cpp : 응용 프로그램에 대한 진입점을 정의합니다.
-// explanation : 이 파일에는 'main' 함수가 포함되어 있으며 프로그램 실행이 시작됩니다. 또한 이 파일에는 프로젝트에 필요한 추가 함수가 포함되어 있습니다.
+// explanation : 이 프로젝트는 Window전용 APP을 생성하는 것의 기본이 되는 프로젝트이다.
 // author : SDW
 // date : 2024-07-09
 
