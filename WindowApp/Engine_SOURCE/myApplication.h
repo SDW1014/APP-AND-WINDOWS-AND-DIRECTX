@@ -21,6 +21,8 @@ namespace MyApp
 		HDC mHdc;
 
 		float mSpeed;
+		float mX;
+		float mY;
 	};
 }
 
