@@ -1,16 +1,20 @@
 #pragma once
+#include "CommonInclude.h"
 
 namespace MyApp
 {
 	class Application
 	{
 	public:
-		void Initialize();
+		void Initialize(HWND hwnd);
 		void Run();
+
 		void Update();
 		void LateUpdate();
 		void Render();
+
 	private:
+		HWND mHwnd;
 	};
 }
 

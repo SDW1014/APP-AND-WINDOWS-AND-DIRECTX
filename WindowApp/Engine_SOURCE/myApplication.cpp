@@ -2,12 +2,16 @@
 
 namespace MyApp
 {
-	void MyApp::Application::Initialize()
+	void MyApp::Application::Initialize(HWND hwnd)
 	{
+		mHwnd = hwnd;
 	}
 
 	void Application::Run()
 	{
+		Update();
+		LateUpdate();
+		Render();
 	}
 
 	void Application::Update()
