@@ -2,6 +2,17 @@
 
 namespace MyApp
 {
+	Application::Application()
+		: mHwnd(nullptr)
+		, mHdc(nullptr)
+		, mSpeed(0.0f)
+	{
+	}
+
+	Application::~Application()
+	{
+	}
+
 	void MyApp::Application::Initialize(HWND hwnd)
 	{
 		mHwnd = hwnd;
@@ -17,6 +28,7 @@ namespace MyApp
 
 	void Application::Update()
 	{
+		mSpeed += 0.01f;
 	}
 
 	void Application::LateUpdate()
@@ -31,7 +43,7 @@ namespace MyApp
 		// 파랑 브러쉬 DC에 선택 그리고 흰색 브러쉬 반환값 반환
 		HBRUSH oldBrush = (HBRUSH)SelectObject(mHdc, blueBrush);
 
-		Rectangle(mHdc, 100, 100, 200, 200);
+		Rectangle(mHdc, 100 + mSpeed, 100, 200 + mSpeed, 200);
 
 		//다시 흰색 원본브러쉬로 선택
 		SelectObject(mHdc, oldBrush);

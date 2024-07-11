@@ -6,6 +6,9 @@ namespace MyApp
 	class Application
 	{
 	public:
+		Application();
+		~Application();
+
 		void Initialize(HWND hwnd);
 		void Run();
 
@@ -16,6 +19,8 @@ namespace MyApp
 	private:
 		HWND mHwnd;
 		HDC mHdc;
+
+		float mSpeed;
 	};
 }
 
