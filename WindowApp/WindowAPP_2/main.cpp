@@ -1,7 +1,7 @@
-﻿// title : API를 이용한 윈도우 프로그래밍
-// explanation : Windows API를 이용하여 윈도우 프로그래밍을 하는 방법을 학습한다.
+﻿// title : Engine처럼 Input을 형성하는 프로젝트 이다.
+// explanation : 마치 유니티 엔진 처럼 혹은 언리얼 엔진 처럼 Input 유형을 형성하고 관리하는 프로젝트를 만든 것이다. 
 // author : SDW
-// date : 2024-07-11
+// date : 2024-07-12
 
 #include "framework.h"
 #include "WindowAPP_2.h"
