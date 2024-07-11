@@ -1,5 +1,6 @@
 #pragma once
-#include "CommonInclude.h"
+#include "CommonInclude.h" //목적 : CommonInclude안의 Vector를 사용하기 위해서
+
 namespace MyApp
 {
 	enum eKeyState
