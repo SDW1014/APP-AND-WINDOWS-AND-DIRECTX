@@ -6,7 +6,7 @@
 
 #include "..\\Engine_SOURCE\\myApplication.h"
 
-Application app;
+Application application;
 
 #define MAX_LOADSTRING 100
 
@@ -30,7 +30,6 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     UNREFERENCED_PARAMETER(lpCmdLine);
 
 
-    app.test();
     // TODO: 여기에 코드를 입력합니다.
 
     // 전역 문자열을 초기화합니다.
@@ -65,6 +64,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
         {
             // 메세지가 없을 경우 여기서 처리
             // 게임 로직이 들어가면 된다.
+            application.test();
         }
     }
 
