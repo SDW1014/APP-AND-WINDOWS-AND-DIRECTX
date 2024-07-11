@@ -1,6 +1,12 @@
 #include "myApplication.h"
 
-void Application::test()
+namespace MyApp
 {
-	int a = 0;
+	void MyApp::Application::Initialize()
+	{
+	}
+
+	void MyApp::Application::update()
+	{
+	}
 }

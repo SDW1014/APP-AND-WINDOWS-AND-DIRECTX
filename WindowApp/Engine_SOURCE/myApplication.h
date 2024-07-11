@@ -1,8 +1,14 @@
 #pragma once
 
-class Application
+namespace MyApp
 {
-public:
-	void test();
-};
+	class Application
+	{
+	public:
+		void Initialize();
+		void update();
+	private:
+	};
+}
+
 
