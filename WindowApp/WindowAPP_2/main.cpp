@@ -6,7 +6,7 @@
 
 #include "..\\Engine_SOURCE\\myApplication.h"
 
-Application application;
+MyApp::Application application;
 
 #define MAX_LOADSTRING 100
 
@@ -64,7 +64,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
         {
             // 메세지가 없을 경우 여기서 처리
             // 게임 로직이 들어가면 된다.
-            application.test();
+            application.update();
         }
     }
 
