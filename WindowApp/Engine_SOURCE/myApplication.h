@@ -15,6 +15,7 @@ namespace MyApp
 
 	private:
 		HWND mHwnd;
+		HDC mHdc;
 	};
 }
 
