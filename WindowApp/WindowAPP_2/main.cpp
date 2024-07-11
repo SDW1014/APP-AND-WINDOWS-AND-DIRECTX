@@ -1,11 +1,15 @@
-﻿// WindowAPP_2.cpp : 애플리케이션에 대한 진입점을 정의합니다.
-//
+﻿// title : API를 이용한 윈도우 프로그래밍
+// explanation : Windows API를 이용하여 윈도우 프로그래밍을 하는 방법을 학습한다.
+// author : SDW
+// date : 2024-07-11
 
 #include "framework.h"
 #include "WindowAPP_2.h"
 
+// 2024-07-11 MaApp을 기준으로 하는 header파일을 include
 #include "..\\Engine_SOURCE\\myApplication.h"
 
+// 2024-07-11 Application 클래스의 객체 생성
 MyApp::Application application;
 
 #define MAX_LOADSTRING 100
@@ -115,6 +119,9 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 
    HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
       CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
+
+   // 2024-07-11 Application 클래스의 Initialize함수를 호출
+   application.Initialize(hWnd);
 
    if (!hWnd)
    {
