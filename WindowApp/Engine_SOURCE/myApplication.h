@@ -21,6 +21,8 @@ namespace MyApp
 		HDC mHdc;
 
 		float mSpeed;
+
+		// 플레이어
 		float mX;
 		float mY;
 	};
