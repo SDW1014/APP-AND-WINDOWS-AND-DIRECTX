@@ -6,8 +6,6 @@ namespace MyApp
 		: mHwnd(nullptr)
 		, mHdc(nullptr)
 		, mSpeed(0.0f)
-		, mX(0.0f)
-		, mY(0.0f)
 	{
 	}
 
@@ -19,6 +17,8 @@ namespace MyApp
 	{
 		mHwnd = hwnd;
 		mHdc = GetDC(mHwnd);
+
+		mPlayer.setPosition(0, 0);
 	}
 
 	void Application::Run()
@@ -36,26 +36,31 @@ namespace MyApp
 		// 내가 왼쪽 키를 입력받으면 x좌표는 마이너스
 		// 내가 위쪽 키를 입력받으면 y좌표는 마이너스
 		// 내가 아래쪽 키를 입력받으면 y좌표는 플러스
+		
+		float x = mPlayer.GetpositionX();
+		float y = mPlayer.GetpositionY();
 
 		if (GetAsyncKeyState(VK_LEFT) & 0x8000)
 		{
-			mX -= 0.01f;
+			x -= 0.01f;
 		}
 
 		if (GetAsyncKeyState(VK_RIGHT) & 0x8000)
 		{
-			mX += 0.01f;
+			x += 0.01f;
 		}
 
 		if (GetAsyncKeyState(VK_UP) & 0x8000)
 		{
-			mY -= 0.01f;
+			y -= 0.01f;
 		}
 
 		if (GetAsyncKeyState(VK_DOWN) & 0x8000)
 		{
-			mY += 0.01f;
+			y += 0.01f;
 		}
+
+		mPlayer.setPosition(x, y);
 	}
 
 	void Application::LateUpdate()
@@ -74,7 +79,10 @@ namespace MyApp
 		HPEN oldPen = (HPEN)SelectObject(mHdc, redPen);
 		SelectObject(mHdc, oldPen);
 
-		Rectangle(mHdc, 100 + mX, 100 + mY, 200 + mX, 200 + mY);
+		int x = mPlayer.GetpositionX();
+		int y = mPlayer.GetpositionY();
+
+		Rectangle(mHdc, 100 + x, 100 + y, 200 + x, 200 + y);
 
 		SelectObject(mHdc, oldBrush);
 		DeleteObject(blueBrush);
