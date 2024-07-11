@@ -1,4 +1,5 @@
 #pragma once
+#include "CommonInclude.h"
 
 namespace MyApp
 {
@@ -7,6 +8,10 @@ namespace MyApp
 	public:
 		GameObject();
 		~GameObject();
+
+		void Update();
+		void LateUpdate();
+		void Render(HDC hdc);
 
 		void setPosition(float x, float y);
 		float GetpositionX();
