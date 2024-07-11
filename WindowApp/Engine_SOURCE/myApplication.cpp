@@ -5,6 +5,7 @@ namespace MyApp
 	void MyApp::Application::Initialize(HWND hwnd)
 	{
 		mHwnd = hwnd;
+		mHdc = GetDC(mHwnd);
 	}
 
 	void Application::Run()
@@ -24,5 +25,6 @@ namespace MyApp
 
 	void Application::Render()
 	{
+		Rectangle(mHdc, 500, 500, 600, 600);
 	}
 }
