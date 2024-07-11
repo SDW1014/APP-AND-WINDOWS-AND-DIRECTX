@@ -6,7 +6,19 @@ namespace MyApp
 	{
 	}
 
-	void MyApp::Application::update()
+	void Application::Run()
+	{
+	}
+
+	void Application::Update()
+	{
+	}
+
+	void Application::LateUpdate()
+	{
+	}
+
+	void Application::Render()
 	{
 	}
 }

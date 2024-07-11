@@ -6,7 +6,10 @@ namespace MyApp
 	{
 	public:
 		void Initialize();
-		void update();
+		void Run();
+		void Update();
+		void LateUpdate();
+		void Render();
 	private:
 	};
 }

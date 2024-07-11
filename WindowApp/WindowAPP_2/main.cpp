@@ -64,7 +64,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
         {
             // 메세지가 없을 경우 여기서 처리
             // 게임 로직이 들어가면 된다.
-            application.update();
+            application.Run();
         }
     }
 
