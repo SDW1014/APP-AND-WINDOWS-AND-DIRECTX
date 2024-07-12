@@ -1,4 +1,5 @@
 #include "myInput.h"
+#include <algorithm>
 
 namespace MyApp
 {
@@ -51,5 +52,50 @@ namespace MyApp
 				mKeys[i].bPressed = false;
 			}
 		}
+	}
+	void Input::updateKeys()
+	{
+		std::for_each(mKeys.begin(), mKeys.end(), [](Key& key)-> void {
+			updateKey(key);
+		});
+	}
+	void Input::updateKey(Input::Key& key)
+	{
+		if(isKeyDown(key.keyCode))
+		{
+			updateKeyDown(key);
+		}
+		else
+		{
+			updateKeyUp(key);
+		}
+	}
+	bool Input::isKeyDown(eKeyCode code)
+	{
+		return GetAsyncKeyState(ASCII[(UINT)code]) & 0x8000;
+	}
+	void Input::updateKeyDown(Input::Key& key)
+	{
+		if (key.bPressed == true)
+		{
+			key.state = eKeyState::Pressed;
+		}
+		else
+		{
+			key.state = eKeyState::Down;
+		}
+		key.bPressed = true;
+	}
+	void Input::updateKeyUp(Input::Key& key)
+	{
+		if (key.bPressed == true)
+		{
+			key.state = eKeyState::Up;
+		}
+		else
+		{
+			key.state = eKeyState::None;
+		}
+		key.bPressed = false;
 	}
 }

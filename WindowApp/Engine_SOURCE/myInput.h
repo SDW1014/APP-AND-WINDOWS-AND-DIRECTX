@@ -45,6 +45,13 @@ namespace MyApp
 		// 외부 특히 main함수 밖에서 사용하는건 모든 객체가 공유하고 사용이 가능한 정적 변수이다. 
 		// 근데 Class내부에서 정의한 static 변수는 외부에서 사용이 불가능하다. 
 		// 한마디로 클래스 내부에서만 사용이 가능한 정적 변수이다.
+
+		// private에서는 시작을 대문자로 하지 않는다. 
+		static void updateKeys();
+		static void updateKey(Input::Key& key);
+		static bool isKeyDown(eKeyCode code);
+		static void updateKeyDown(Input::Key& key);
+		static void updateKeyUp(Input::Key& key);
 	};
 }
 
