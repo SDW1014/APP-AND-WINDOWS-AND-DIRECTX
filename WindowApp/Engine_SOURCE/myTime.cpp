@@ -5,7 +5,7 @@ namespace MyApp
 	LARGE_INTEGER Time::CpuFrequency = {};
 	LARGE_INTEGER Time::PrevFrequency = {};
 	LARGE_INTEGER Time::CurrentFrequency = {};
-	float Time::DeltaTime = 0.0f;
+	float Time::DeltaTimeValue = 0.0f;
 
 	void Time::Initialize()
 	{
@@ -23,7 +23,7 @@ namespace MyApp
 		// 이전 시간과 현재 시간의 차이를 구한다.
 		float diffrenctFrequency = static_cast<float>(CurrentFrequency.QuadPart - PrevFrequency.QuadPart);
 
-		DeltaTime = diffrenctFrequency / static_cast<float>(CpuFrequency.QuadPart);
+		DeltaTimeValue = diffrenctFrequency / static_cast<float>(CpuFrequency.QuadPart);
 
 		PrevFrequency.QuadPart = CurrentFrequency.QuadPart;
 	}
@@ -31,7 +31,7 @@ namespace MyApp
 	{
 		static float time = 0.0f;
 
-		time += DeltaTime;
+		time += DeltaTimeValue;
 
 		wchar_t str[50] = L"";
 
