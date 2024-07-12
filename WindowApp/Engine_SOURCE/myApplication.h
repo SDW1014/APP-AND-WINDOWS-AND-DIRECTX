@@ -10,7 +10,7 @@ namespace MyApp
 		Application();
 		~Application();
 
-		void Initialize(HWND hwnd);
+		void Initialize(HWND hwnd, UINT width, UINT height);
 		void Run();
 
 		void Update();
@@ -21,11 +21,10 @@ namespace MyApp
 		HWND mHwnd;
 		HDC mHdc;
 
-		float mSpeed;
+		UINT mWidth;
+		UINT mHeight;
 
 		// 플레이어
-		//float mX;
-		//float mY;
 		GameObject mPlayer;
 	};
 }

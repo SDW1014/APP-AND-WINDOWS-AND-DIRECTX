@@ -7,7 +7,8 @@ namespace MyApp
 	Application::Application()
 		: mHwnd(nullptr)
 		, mHdc(nullptr)
-		, mSpeed(0.0f)
+		, mWidth(0)
+		, mHeight(0)
 	{
 	}
 
@@ -15,10 +16,16 @@ namespace MyApp
 	{
 	}
 
-	void MyApp::Application::Initialize(HWND hwnd)
+	void MyApp::Application::Initialize(HWND hwnd, UINT width, UINT height)
 	{
 		mHwnd = hwnd;
 		mHdc = GetDC(mHwnd);
+
+		RECT rect = { 0, 0, width, height};
+		AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, FALSE);
+
+		SetWindowPos(mHwnd, nullptr, 0, 0, rect.right - rect.left, rect.bottom - rect.top, 0);
+		ShowWindow(mHwnd, true);
 
 		mPlayer.setPosition(0, 0);
 
