@@ -1,4 +1,5 @@
 #include "myApplication.h"
+#include "myInput.h"
 
 namespace MyApp
 {
@@ -19,6 +20,8 @@ namespace MyApp
 		mHdc = GetDC(mHwnd);
 
 		mPlayer.setPosition(0, 0);
+
+		Input::Initialize();
 	}
 
 	void Application::Run()
@@ -30,9 +33,7 @@ namespace MyApp
 
 	void Application::Update()
 	{
-		mSpeed += 0.01f;
-
-		
+		Input::Update();
 
 		mPlayer.Update();
 	}
