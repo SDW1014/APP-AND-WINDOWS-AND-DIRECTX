@@ -1,7 +1,7 @@
-﻿// title : Engine처럼 Input을 형성하는 프로젝트 이다.
-// explanation : 마치 유니티 엔진 처럼 혹은 언리얼 엔진 처럼 Input 유형을 형성하고 관리하는 프로젝트를 만든 것이다. 
+﻿// title : Engine처럼 프레임을 나누는 프로젝트이다.
+// explanation : TimeClass를 사용해서, 프레임을 나누는 예제이다.
 // author : SDW
-// date : 2024-07-12
+// date : 2024-07-13
 
 #include "framework.h"
 #include "WindowAPP_2.h"
