@@ -1,5 +1,6 @@
 #include "myApplication.h"
 #include "myInput.h"
+#include "myTime.h"
 
 namespace MyApp
 {
@@ -22,6 +23,7 @@ namespace MyApp
 		mPlayer.setPosition(0, 0);
 
 		Input::Initialize();
+		Time::Initialize();
 	}
 
 	void Application::Run()
@@ -34,6 +36,7 @@ namespace MyApp
 	void Application::Update()
 	{
 		Input::Update();
+		Time::Update();
 
 		mPlayer.Update();
 	}
