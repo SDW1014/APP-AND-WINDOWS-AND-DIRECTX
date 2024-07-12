@@ -10,7 +10,7 @@ namespace MyApp
 		, mWidth(0)
 		, mHeight(0)
 		, mBackHdc(nullptr)
-		, mBackBuffer(nullptr)
+		, mBackBitmap(nullptr)
 	{
 	}
 
@@ -33,12 +33,12 @@ namespace MyApp
 		ShowWindow(mHwnd, true);
 
 		// 윈도우 해상도에 맞는 백버퍼(도화지) 생성
-		mBackBuffer = CreateCompatibleBitmap(mHdc, width, height);
+		mBackBitmap = CreateCompatibleBitmap(mHdc, width, height);
 
 		// 백버퍼에 그림을 그리기 위한 DC 생성
 		mBackHdc = CreateCompatibleDC(mHdc);
 
-		HBITMAP oldBitmap = (HBITMAP)SelectObject(mBackHdc, mBackBuffer);
+		HBITMAP oldBitmap = (HBITMAP)SelectObject(mBackHdc, mBackBitmap);
 		DeleteObject(oldBitmap);
 
 		mPlayer.setPosition(0, 0);

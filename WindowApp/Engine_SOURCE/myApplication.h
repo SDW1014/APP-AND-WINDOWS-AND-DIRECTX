@@ -22,7 +22,7 @@ namespace MyApp
 		HDC mHdc;
 
 		HDC mBackHdc;
-		HBITMAP mBackBuffer;
+		HBITMAP mBackBitmap;
 
 		UINT mWidth;
 		UINT mHeight;
