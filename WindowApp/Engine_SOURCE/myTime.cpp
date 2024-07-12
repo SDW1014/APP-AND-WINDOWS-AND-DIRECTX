@@ -27,6 +27,20 @@ namespace MyApp
 
 		PrevFrequency.QuadPart = CurrentFrequency.QuadPart;
 	}
+	void Time::Render(HDC hdc)
+	{
+		static float time = 0.0f;
+
+		time += DeltaTime;
+
+		wchar_t str[50] = L"";
+
+		swprintf_s(str, 50,  L"Time : %f", time);
+
+		int len = wcsnlen_s(str, 50);
+
+		TextOut(hdc, 0, 0, str, len);
+	}
 }
 
 

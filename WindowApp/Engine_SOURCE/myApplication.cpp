@@ -47,6 +47,7 @@ namespace MyApp
 
 	void Application::Render()
 	{
+		Time::Render(mHdc);
 		mPlayer.Render(mHdc);
 	}
 }

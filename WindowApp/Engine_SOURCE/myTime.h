@@ -12,6 +12,7 @@ namespace MyApp
 	public:
 		static void Initialize();
 		static void Update();
+		static void Render(HDC hdc);
 
 	private:
 		static LARGE_INTEGER CpuFrequency;
