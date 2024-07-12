@@ -33,9 +33,9 @@ namespace MyApp
 		static void Initialize();
 		static void Update();
 
-		static bool GetKeyDown(eKeyCode code);
-		static bool GetKeyUp(eKeyCode code);
-		static bool GetKey(eKeyCode code);
+		static bool GetKeyDown(eKeyCode code) { return mKeys[(UINT)code].state == eKeyState::Down; };
+		static bool GetKeyUp(eKeyCode code) { return mKeys[(UINT)code].state == eKeyState::Up; };
+		static bool GetKey(eKeyCode code) { return mKeys[(UINT)code].state == eKeyState::Pressed; };
 	private:
 		//eKeyState mState; // 0 : Down, 1 : Pressed, 2 : Up, 3 : None
 		static std::vector<Key> mKeys;	// 키들을 저장하는 배열
