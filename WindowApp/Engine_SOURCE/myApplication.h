@@ -21,6 +21,9 @@ namespace MyApp
 		HWND mHwnd;
 		HDC mHdc;
 
+		HDC mBackHdc;
+		HBITMAP mBackBuffer;
+
 		UINT mWidth;
 		UINT mHeight;
 
