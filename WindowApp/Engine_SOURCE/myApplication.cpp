@@ -47,6 +47,11 @@ namespace MyApp
 
 	void Application::Render()
 	{
+		//하얀색 배경을 크기에 맞춰서 하나 만든다
+		Rectangle(mHdc, 0, 0, 1600, 900); // 이렇게 하면 문제가 생긴다. 
+		// 이유는 무엇일까? 
+		// 이유는 더블 버퍼링이 없기 때문이다.
+
 		Time::Render(mHdc);
 		mPlayer.Render(mHdc);
 	}
