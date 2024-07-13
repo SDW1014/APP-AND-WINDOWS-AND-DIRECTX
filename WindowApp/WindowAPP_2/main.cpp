@@ -1,7 +1,7 @@
-﻿// title : Engine처럼 프레임을 나누는 프로젝트이다.
-// explanation : TimeClass를 사용해서, 프레임을 나누는 예제이다.
+﻿// title : Engine처럼 Scene을 나누기 예제
+// explanation : Engine처럼 Scene을 나누어서 구현하는 예제를 만들었다.
 // author : SDW
-// date : 2024-07-13
+// date : 2024-07-14
 
 #include "framework.h"
 #include "WindowAPP_2.h"

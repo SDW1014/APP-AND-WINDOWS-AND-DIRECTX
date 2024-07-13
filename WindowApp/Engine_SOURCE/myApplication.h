@@ -34,7 +34,6 @@ namespace MyApp
 		UINT mWidth;
 		UINT mHeight;
 
-		std::vector<GameObject*> mGameObjects;	
 	};
 }
 
