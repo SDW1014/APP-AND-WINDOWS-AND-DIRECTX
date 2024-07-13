@@ -1,5 +1,5 @@
-﻿// title : Engine처럼 프레임을 나누는 프로젝트이다.
-// explanation : TimeClass를 사용해서, 프레임을 나누는 예제이다.
+﻿// title : Training LV7 부분, 파란색 상자가 전방으로 총알을 쏜다.
+// explanation : LV7에서는 총알을 발사하는 기능을 추가한다.
 // author : SDW
 // date : 2024-07-13
 
