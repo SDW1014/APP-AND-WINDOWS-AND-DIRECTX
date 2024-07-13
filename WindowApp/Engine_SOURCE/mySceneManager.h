@@ -7,7 +7,7 @@ namespace MyApp
 	class SceneManager
 	{
 	public:
-		template<typename T>
+		template <typename T>
 		static Scene* CreateScene(const std::wstring& name)
 		{
 			T* scene = new T();
@@ -15,6 +15,8 @@ namespace MyApp
 			scene->Initialize();
 
 			mScene.insert(std::make_pair(name, scene));
+
+			return scene;
 		}
 
 		static Scene* LoadScene(const std::wstring& name)
@@ -29,9 +31,6 @@ namespace MyApp
 			return mActiveScene;
 		}
 
-		SceneManager();
-		~SceneManager();
-
 		static void Initialize();
 		static void Update();
 		static void LateUpdate();
@@ -39,7 +38,7 @@ namespace MyApp
 
 	private:
 		//static std::vector<Scene*> mScenes;
-		static std::map<const std::wstring, Scene*> mScene;
+		static std::map<std::wstring, Scene*> mScene;
 		static Scene* mActiveScene;
 	};
 }

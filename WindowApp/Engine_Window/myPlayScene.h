@@ -1,5 +1,5 @@
 #pragma once
-#include "myScene.h"
+#include "..\\Engine_SOURCE\\myScene.h"
 namespace MyApp
 {
 	class PlayScene : public Scene
@@ -12,8 +12,6 @@ namespace MyApp
 		void Update() override;
 		void LateUpdate() override;
 		void Render(HDC hdc) override;
-	private:
-
 	};
 }
 
