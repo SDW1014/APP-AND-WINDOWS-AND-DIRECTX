@@ -25,8 +25,13 @@ namespace MyApp
 		createBuffer(width, height);
 		initializeEtc();
 
-		GameObject* gameObj = new GameObject();
-		mGameObjects.push_back(gameObj);
+		// 100번 반복해서 100개의 gameObject 형성 Randome으로 좌표를 주자 
+		for (int i = 0; i < 100; ++i)
+		{
+			GameObject* gameObj = new GameObject();
+			gameObj->setPosition(rand() % 1600, rand() % 900);
+			mGameObjects.push_back(gameObj);
+		}
 	}
 
 	void Application::Run()
