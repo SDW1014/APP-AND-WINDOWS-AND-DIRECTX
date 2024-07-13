@@ -2,4 +2,6 @@
 #include <Windows.h>
 
 #include <vector>
+
+#include <String>
 //#include <list>

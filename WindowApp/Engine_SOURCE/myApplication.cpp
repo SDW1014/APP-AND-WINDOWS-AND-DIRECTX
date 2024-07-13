@@ -1,6 +1,7 @@
 #include "myApplication.h"
 #include "myInput.h"
 #include "myTime.h"
+#include "mySceneManager.h"
 
 namespace MyApp
 {
@@ -11,7 +12,6 @@ namespace MyApp
 		, mHeight(0)
 		, mBackHdc(nullptr)
 		, mBackBitmap(nullptr)
-		
 	{
 	}
 
@@ -24,6 +24,8 @@ namespace MyApp
 		adjustWindowRect(hwnd, width, height);
 		createBuffer(width, height);
 		initializeEtc();
+
+		SceneManager::Initialize();
 	}
 
 	void Application::Run()
@@ -38,7 +40,7 @@ namespace MyApp
 		Input::Update();
 		Time::Update();
 
-		
+		SceneManager::Update();
 	}
 
 	void Application::LateUpdate()
@@ -50,7 +52,7 @@ namespace MyApp
 		clearRenderTarget();
 
 		Time::Render(mBackHdc);
-		
+		SceneManager::Render(mBackHdc);
 
 		copyRenderTarget(mBackHdc, mHdc);
 	}
