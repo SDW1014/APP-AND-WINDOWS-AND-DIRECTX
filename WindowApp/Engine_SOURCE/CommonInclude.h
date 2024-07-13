@@ -1,7 +1,9 @@
 #pragma once
 #include <Windows.h>
 
-#include <vector>
-
+#include <algorithm>
 #include <String>
+
+#include <vector>
+#include <map>
 //#include <list>

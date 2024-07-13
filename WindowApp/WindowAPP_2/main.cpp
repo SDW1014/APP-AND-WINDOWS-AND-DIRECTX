@@ -8,6 +8,7 @@
 
 // 2024-07-11 MaApp을 기준으로 하는 header파일을 include
 #include "..\\Engine_SOURCE\\myApplication.h"
+#include "..\\Engine_Window\\myLoadScenes.h"
 
 // 2024-07-11 Application 클래스의 객체 생성
 MyApp::Application application;
@@ -133,6 +134,9 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 
    ShowWindow(hWnd, nCmdShow);
    UpdateWindow(hWnd);
+
+   // 2024-07-14 load Scenes
+   MyApp::SceneManager::LoadScene(MyApp::SceneType::Title);
 
    return TRUE;
 }

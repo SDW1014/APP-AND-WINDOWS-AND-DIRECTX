@@ -17,8 +17,10 @@ namespace MyApp
 	}
 	void SceneManager::LateUpdate()
 	{
+		mActiveScene->LateUpdate();
 	}
 	void SceneManager::Render(HDC hdc)
 	{
+		mActiveScene->Render(hdc);
 	}
 }
