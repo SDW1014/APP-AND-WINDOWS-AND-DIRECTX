@@ -2,6 +2,7 @@
 #include "myInput.h"
 #include "myTime.h"
 #include "myBulletPlayerGameObject.h"
+#include "myBulletGameObject.h"
 
 namespace MyApp
 {
@@ -45,6 +46,26 @@ namespace MyApp
 		mPlayer = new BulletPlayerGameObject();
 		mPlayer->setPosition(0,0);
 
+		//mPlayer에 함수 넣기 
+		// Gameobject를 상속받은 BulletpalyerGameObject에 함수를 넣어준다. 람다로 넣는다.
+		// BUlletplayerGameObject의 함수를 집어넣을수있나? 
+		//void SetShotFunction(voidFUnction funcPtr) { mShotFunction = funcPtr; }
+		mPlayer->SetShotFunction([this]()
+		{
+			for (int i = 0; i < 10; ++i)
+			{
+				if (!mBullets[i].IsShow())
+				{
+					mBullets[i].OnShow(mPlayer->GetpositionX(), mPlayer->GetpositionY());
+					break;
+				}
+			}
+		});
+		//SetSHowFunction이 없다는데 뭐가문제지? 
+
+
+
+
 		Input::Initialize();
 		Time::Initialize();
 	}
@@ -62,6 +83,11 @@ namespace MyApp
 		Time::Update();
 
 		mPlayer->Update();
+
+		for (int i = 0; i < 10; i++)
+		{
+			mBullets[i].Update();
+		}
 	}
 
 	void Application::LateUpdate()
@@ -77,6 +103,10 @@ namespace MyApp
 
 		Time::Render(mBackHdc);
 		mPlayer->Render(mBackHdc);
+		for(int i = 0; i < 10; ++i)
+		{
+			mBullets[i].Render(mBackHdc);
+		}
 
 		// Back에 미리 그려주는것 그리고 원본에 출력을 해야한다.
 		BitBlt(mHdc, 0, 0, mWidth, mHeight, mBackHdc, 0, 0, SRCCOPY);

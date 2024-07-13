@@ -19,7 +19,7 @@ namespace MyApp
 		const int speed = 100.0f;
 		GameObject::Update();
 
-		if (Input::GetKey(eKeyCode::X))
+		if (Input::GetKey(eKeyCode::Space))
 		{
 			if(mShotFunction != nullptr)
 			{

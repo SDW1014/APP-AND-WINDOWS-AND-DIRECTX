@@ -1,10 +1,11 @@
 #pragma once
 
 #include "myGameObject.h"
+#include <functional>
 
 namespace MyApp
 {
-	typedef void (*voidFUnction)();
+	using voidFunction = std::function<void()>;
 
 	class BulletPlayerGameObject : public GameObject
 	{
@@ -15,10 +16,9 @@ namespace MyApp
 		virtual void Update() override;
 		virtual void Render(HDC hdc) override;
 
-		void SetShotFunction(voidFUnction funcPtr) { mShotFunction = funcPtr; }
+		void SetShotFunction(voidFunction funcPtr) { mShotFunction = funcPtr; }
 	private:
-		voidFUnction mShotFunction;
-		
+		voidFunction mShotFunction;
 	};
 }
 

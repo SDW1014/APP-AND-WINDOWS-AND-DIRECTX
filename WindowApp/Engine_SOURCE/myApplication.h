@@ -2,6 +2,7 @@
 #include "CommonInclude.h"
 #include "myGameObject.h"
 #include "myBulletPlayerGameObject.h"
+#include "myBulletGameObject.h"
 
 namespace MyApp
 {
@@ -31,7 +32,14 @@ namespace MyApp
 		// ÇÃ·¹ÀÌ¾î
 		//GameObject mPlayer;
 		//
-		GameObject* mPlayer;
+		BulletPlayerGameObject* mPlayer;
+
+		// ÃÑ¾Ë Test
+		//BulletGameObject mBullet;
+		//std::vector<BulletGameObject> mBullets;
+		
+		// ÃÑ¾Ë 10°³
+		BulletGameObject mBullets[10];
 	};
 }
 
