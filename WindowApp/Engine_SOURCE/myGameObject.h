@@ -9,9 +9,9 @@ namespace MyApp
 		GameObject();
 		~GameObject();
 
-		void Update();
-		void LateUpdate();
-		void Render(HDC hdc);
+		virtual void Update();
+		virtual void LateUpdate();
+		virtual void Render(HDC hdc);
 
 		void setPosition(float x, float y);
 		float GetpositionX();

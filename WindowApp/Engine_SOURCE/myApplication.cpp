@@ -1,6 +1,7 @@
 #include "myApplication.h"
 #include "myInput.h"
 #include "myTime.h"
+#include "myBulletPlayerGameObject.h"
 
 namespace MyApp
 {
@@ -41,7 +42,8 @@ namespace MyApp
 		HBITMAP oldBitmap = (HBITMAP)SelectObject(mBackHdc, mBackBitmap);
 		DeleteObject(oldBitmap);
 
-		mPlayer.setPosition(0, 0);
+		mPlayer = new BulletPlayerGameObject();
+		mPlayer->setPosition(0,0);
 
 		Input::Initialize();
 		Time::Initialize();
@@ -59,7 +61,7 @@ namespace MyApp
 		Input::Update();
 		Time::Update();
 
-		mPlayer.Update();
+		mPlayer->Update();
 	}
 
 	void Application::LateUpdate()
@@ -74,7 +76,7 @@ namespace MyApp
 		// 이유는 더블 버퍼링이 없기 때문이다.
 
 		Time::Render(mBackHdc);
-		mPlayer.Render(mBackHdc);
+		mPlayer->Render(mBackHdc);
 
 		// Back에 미리 그려주는것 그리고 원본에 출력을 해야한다.
 		BitBlt(mHdc, 0, 0, mWidth, mHeight, mBackHdc, 0, 0, SRCCOPY);

@@ -1,6 +1,7 @@
 #pragma once
 #include "CommonInclude.h"
 #include "myGameObject.h"
+#include "myBulletPlayerGameObject.h"
 
 namespace MyApp
 {
@@ -28,7 +29,9 @@ namespace MyApp
 		UINT mHeight;
 
 		// 플레이어
-		GameObject mPlayer;
+		//GameObject mPlayer;
+		//
+		GameObject* mPlayer;
 	};
 }
 
