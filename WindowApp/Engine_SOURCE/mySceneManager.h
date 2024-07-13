@@ -17,6 +17,18 @@ namespace MyApp
 			mScene.insert(std::make_pair(name, scene));
 		}
 
+		static Scene* LoadScene(const std::wstring& name)
+		{
+			std::map<const std::wstring, Scene*>::iterator iter = mScene.find(name);
+
+			if (iter == mScene.end())
+				return nullptr;
+
+			mActiveScene = iter->second;
+
+			return mActiveScene;
+		}
+
 		SceneManager();
 		~SceneManager();
 

@@ -136,7 +136,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
    UpdateWindow(hWnd);
 
    // 2024-07-14 load Scenes
-   MyApp::SceneManager::LoadScene(MyApp::SceneType::Title);
+   MyApp::LoadScenes();
 
    return TRUE;
 }

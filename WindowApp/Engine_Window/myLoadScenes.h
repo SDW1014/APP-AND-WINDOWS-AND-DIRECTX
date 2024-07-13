@@ -1,5 +1,6 @@
 #pragma once
-#include "mySceneManager.h"
+#include "..\\Engine_SOURCE\\mySceneManager.h"
+
 #include "myPlayScene.h"
 
 namespace MyApp
@@ -9,5 +10,7 @@ namespace MyApp
 		SceneManager::CreateScene<PlayScene>(L"PlayScene");
 		// SceneManager::CreateScene<EndScene>(L"EndScene");
 		// SceneManager::CreateScene<TitleScene>(L"TitleScene");
+
+		SceneManager::LoadScene(L"PlayScene");
 	}
 }
