@@ -22,6 +22,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)myScene.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)mySceneManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)myTime.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)myVector.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)myApplication.cpp" />
@@ -31,5 +32,6 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)myScene.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)mySceneManager.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)myTime.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)myVector.cpp" />
   </ItemGroup>
 </Project>

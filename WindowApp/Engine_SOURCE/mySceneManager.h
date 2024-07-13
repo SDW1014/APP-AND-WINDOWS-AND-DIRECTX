@@ -1,5 +1,4 @@
 #pragma once
-#include "mySceneManager.h"
 #include "myScene.h"
 
 namespace MyApp
