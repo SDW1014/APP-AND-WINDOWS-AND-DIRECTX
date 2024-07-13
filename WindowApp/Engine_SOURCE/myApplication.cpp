@@ -68,10 +68,8 @@ namespace MyApp
 
 	void Application::Render()
 	{
-		//하얀색 배경을 크기에 맞춰서 하나 만든다
-		Rectangle(mBackHdc, 0, 0, 1600, 900); // 이렇게 하면 문제가 생긴다. 
-		// 이유는 무엇일까? 
-		// 이유는 더블 버퍼링이 없기 때문이다.
+		// -1 -1 1601 901을 하는 이유는 조금의 더 커진 도화지가 필요하기 때문이다.
+		Rectangle(mBackHdc, -1, -1, 1601, 901);
 
 		Time::Render(mBackHdc);
 		mPlayer.Render(mBackHdc);
