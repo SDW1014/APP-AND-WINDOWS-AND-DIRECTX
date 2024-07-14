@@ -3,6 +3,8 @@
 
 #include "myPlayScene.h"
 
+
+
 namespace MyApp
 {
 	void LoadScenes()

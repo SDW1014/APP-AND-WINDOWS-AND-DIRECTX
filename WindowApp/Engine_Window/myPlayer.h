@@ -1,20 +1,17 @@
 #pragma once
-#include "..\\Engine_SOURCE\\myScene.h"
+#include "..\\Engine_SOURCE\\myGameObject.h"
+
 namespace MyApp
 {
-	class PlayScene : public Scene
+	class Player : public GameObject
 	{
 	public:
-		PlayScene();
-		~PlayScene();
-
 		void Initialize() override;
 		void Update() override;
 		void LateUpdate() override;
 		void Render(HDC hdc) override;
 
 	private:
+
 	};
 }
-
-
