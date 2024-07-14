@@ -21,11 +21,11 @@ namespace MyApp
 
 	void SpriteRenderer::Render(HDC hdc)
 	{
-		//ÆÄ¶û ºê·¯½¬ »ı¼º
+		//íŒŒë‘ ë¸ŒëŸ¬ì‰¬ ìƒì„±
 		HBRUSH blueBrush
 			= CreateSolidBrush(RGB(255, 0, 255));
 
-		// ÆÄ¶û ºê·¯½¬ DC¿¡ ¼±ÅÃ ±×¸®°í Èò»ö ºê·¯½¬ ¹İÈ¯°ª ¹İÈ¯
+		// íŒŒë‘ ë¸ŒëŸ¬ì‰¬ DCì— ì„ íƒ ê·¸ë¦¬ê³  í°ìƒ‰ ë¸ŒëŸ¬ì‰¬ ë°˜í™˜ê°’ ë°˜í™˜
 		HBRUSH oldBrush = (HBRUSH)SelectObject(hdc, blueBrush);
 
 		HPEN redPen = CreatePen(PS_SOLID, 2, RGB(rand() % 255, rand() % 255, rand() % 255));

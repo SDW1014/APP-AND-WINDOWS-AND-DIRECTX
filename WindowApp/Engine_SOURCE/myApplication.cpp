@@ -5,97 +5,127 @@
 
 namespace MyApp
 {
-	Application::Application()
-		: mHwnd(nullptr)
-		, mHdc(nullptr)
-		, mWidth(0)
-		, mHeight(0)
-		, mBackHdc(nullptr)
-		, mBackBitmap(nullptr)
-	{
-	}
+    // 1. Application ìƒì„±ì
+    Application::Application()
+        : mHwnd(nullptr)
+        , mHdc(nullptr)
+        , mWidth(0)
+        , mHeight(0)
+        , mBackHdc(nullptr)
+        , mBackBitmap(nullptr)
+    {
+    }
 
-	Application::~Application()
-	{
-	}
+    // 2. Application ì†Œë©¸ì
+    Application::~Application()
+    {
+    }
 
-	void Application::Initialize(HWND hwnd, UINT width, UINT height)
-	{
-		adjustWindowRect(hwnd, width, height);
-		createBuffer(width, height);
-		initializeEtc();
+    // 3. Initialize í•¨ìˆ˜
+    void Application::Initialize(HWND hwnd, UINT width, UINT height)
+    {
+        // 3.1. ìœˆë„ìš° ì„¤ì • ë° ì´ˆê¸°í™”
+        adjustWindowRect(hwnd, width, height);
+        createBuffer(width, height);
+        initializeEtc();
 
-		SceneManager::Initialize();
-	}
+        // 3.2. SceneManager ì´ˆê¸°í™”
+        SceneManager::Initialize();
+    }
 
-	void Application::Run()
-	{
-		Update();
-		LateUpdate();
-		Render();
-	}
+    // 4. Run í•¨ìˆ˜ (ê²Œì„ ë£¨í”„)
+    void Application::Run()
+    {
+        // 4.1. Update í•¨ìˆ˜ í˜¸ì¶œ
+        Update();
+        // 4.2. LateUpdate í•¨ìˆ˜ í˜¸ì¶œ
+        LateUpdate();
+        // 4.3. Render í•¨ìˆ˜ í˜¸ì¶œ
+        Render();
+    }
 
-	void Application::Update()
-	{
-		Input::Update();
-		Time::Update();
+    // 5. Update í•¨ìˆ˜
+    void Application::Update()
+    {
+        // 5.1. ì…ë ¥ ì—…ë°ì´íŠ¸
+        Input::Update();
+        // 5.2. ì‹œê°„ ì—…ë°ì´íŠ¸
+        Time::Update();
 
-		SceneManager::Update();
-	}
+        // 5.3. SceneManagerë¥¼ í†µí•œ í˜„ì¬ ì”¬ ì—…ë°ì´íŠ¸
+        SceneManager::Update();
+    }
 
-	void Application::LateUpdate()
-	{
-	}
+    // 6. LateUpdate í•¨ìˆ˜ (í˜„ì¬ ë¹„ì–´ìˆìŒ)
+    void Application::LateUpdate()
+    {
+    }
 
-	void Application::Render()
-	{
-		clearRenderTarget();
+    // 7. Render í•¨ìˆ˜
+    void Application::Render()
+    {
+        // 7.1. ë Œë”ë§ ì‹œì‘
+        clearRenderTarget();
 
-		Time::Render(mBackHdc);
-		SceneManager::Render(mBackHdc);
+        // 7.2. ì‹œê°„ ì •ë³´ ë Œë”ë§
+        Time::Render(mBackHdc);
 
-		copyRenderTarget(mBackHdc, mHdc);
-	}
-	void Application::clearRenderTarget()
-	{
-		// -1 -1 1601 901À» ÇÏ´Â ÀÌÀ¯´Â Á¶±İÀÇ ´õ Ä¿Áø µµÈ­Áö°¡ ÇÊ¿äÇÏ±â ¶§¹®ÀÌ´Ù.
-		Rectangle(mBackHdc, -1, -1, 1601, 901);
-	}
-	void Application::copyRenderTarget(HDC source, HDC dest)
-	{
-		// Back¿¡ ¹Ì¸® ±×·ÁÁÖ´Â°Í ±×¸®°í ¿øº»¿¡ Ãâ·ÂÀ» ÇØ¾ßÇÑ´Ù.
-		BitBlt(dest, 0, 0, mWidth, mHeight, source, 0, 0, SRCCOPY);
-	}
-	void Application::adjustWindowRect(HWND hwnd, UINT width, UINT height)
-	{
-		mHwnd = hwnd;
-		mHdc = GetDC(hwnd);
+        // 7.3. SceneManagerë¥¼ í†µí•œ í˜„ì¬ ì”¬ ë Œë”ë§
+        SceneManager::Render(mBackHdc);
 
-		RECT rect = { 0, 0, width, height };
-		AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, false);
+        // 7.4. ë”ë¸” ë²„í¼ë§ì„ ìœ„í•œ ë°±ë²„í¼ ë³µì‚¬
+        copyRenderTarget(mBackHdc, mHdc);
+    }
 
-		mWidth = rect.right - rect.left;
-		mHeight = rect.bottom - rect.top;
+    // 8. clearRenderTarget í•¨ìˆ˜
+    void Application::clearRenderTarget()
+    {
+        // -1 -1 1601 901 Ï´  Ä¿ È­ Ê¿Ï± Ì´.
+        Rectangle(mBackHdc, -1, -1, 1601, 901);
+    }
 
-		SetWindowPos(hwnd, nullptr, 0, 0, mWidth, mHeight, 0);
-		ShowWindow(hwnd, true);
-	}
+    // 9. copyRenderTarget í•¨ìˆ˜
+    void Application::copyRenderTarget(HDC source, HDC dest)
+    {
+        // Back Ì¸ ×·Ö´Â° ×¸  Ø¾Ñ´.
+        BitBlt(dest, 0, 0, mWidth, mHeight, source, 0, 0, SRCCOPY);
+    }
 
-	void Application::createBuffer(UINT width, UINT height)
-	{
-		//À©µµ¿ì ÇØ»óµµ¿¡ ¸Â´Â ¹é¹öÆÛ(µµÈ­Áö)»ı¼º
-		mBackBitmap = CreateCompatibleBitmap(mHdc, width, height);
+    // 10. adjustWindowRect í•¨ìˆ˜
+    void Application::adjustWindowRect(HWND hwnd, UINT width, UINT height)
+    {
+        mHwnd = hwnd;
+        mHdc = GetDC(hwnd);
 
-		//¹é¹öÆÛ¸¦ °¡¸£Å³ DC»ı¼º
-		mBackHdc = CreateCompatibleDC(mHdc);
+        RECT rect = { 0, 0, width, height };
+        AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, false);
 
-		HBITMAP oldBitmap = (HBITMAP)SelectObject(mBackHdc, mBackBitmap);
-		DeleteObject(oldBitmap);
-	}
+        mWidth = rect.right - rect.left;
+        mHeight = rect.bottom - rect.top;
 
-	void Application::initializeEtc()
-	{
-		Input::Initialize();
-		Time::Initialize();
-	}
+        SetWindowPos(hwnd, nullptr, 0, 0, mWidth, mHeight, 0);
+        ShowWindow(hwnd, true);
+    }
+
+    // 11. createBuffer í•¨ìˆ˜
+    void Application::createBuffer(UINT width, UINT height)
+    {
+        // Ø»óµµ¿Â´(È­)
+        mBackBitmap = CreateCompatibleBitmap(mHdc, width, height);
+
+        //Û¸ Å³ DC
+        mBackHdc = CreateCompatibleDC(mHdc);
+
+        HBITMAP oldBitmap = (HBITMAP)SelectObject(mBackHdc, mBackBitmap);
+        DeleteObject(oldBitmap);
+    }
+
+    // 12. initializeEtc í•¨ìˆ˜
+    void Application::initializeEtc()
+    {
+        // 12.1. ì…ë ¥ ì‹œìŠ¤í…œ ì´ˆê¸°í™”
+        Input::Initialize();
+        // 12.2. ì‹œê°„ ì‹œìŠ¤í…œ ì´ˆê¸°í™”
+        Time::Initialize();
+    }
 }
