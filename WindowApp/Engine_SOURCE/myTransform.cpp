@@ -1,30 +1,24 @@
 #include "myTransform.h"
 
-namespace MaApp
+namespace MyApp
 {
-
+    Transform::Transform()
+	{
+	}
+	Transform::~Transform()
+	{
+	}
+	void Transform::Initialize()
+	{
+	}
+	void Transform::Update()
+	{
+	}
+	void Transform::LateUpdate()
+	{
+	}
+	void Transform::Render(HDC hdc)
+	{
+	}
 }
 
-MyApp::Transform::Transform()
-{
-}
-
-MyApp::Transform::~Transform()
-{
-}
-
-void MyApp::Transform::Initialize()
-{
-}
-
-void MyApp::Transform::Update()
-{
-}
-
-void MyApp::Transform::LateUpdate()
-{
-}
-
-void MyApp::Transform::Render(HDC hdc)
-{
-}

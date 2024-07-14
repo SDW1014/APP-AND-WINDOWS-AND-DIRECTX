@@ -13,6 +13,9 @@
 // 2024-07-11 Application 클래스의 객체 생성
 MyApp::Application application;
 
+ULONG_PTR gpToken;
+Gdiplus::GdiplusStartupInput gpsi;
+
 #define MAX_LOADSTRING 100
 
 // 전역 변수:
@@ -134,6 +137,9 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 
    ShowWindow(hWnd, nCmdShow);
    UpdateWindow(hWnd);
+
+    // 2024-07-14 Gdiplus 초기화 추가
+    Gdiplus::GdiplusStartup(&gpToken, &gpsi, NULL);
 
    // 2024-07-14 load Scenes
    MyApp::LoadScenes();

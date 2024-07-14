@@ -3,6 +3,7 @@
 #include "myPlayer.h"
 #include "myTransform.h"
 #include "mySpriteRenderer.h"
+
 namespace MyApp
 {
 	PlayScene::PlayScene()
@@ -14,42 +15,19 @@ namespace MyApp
 	void PlayScene::Initialize()
 	{
 		{
-			Player* 		pl = new Player();
-			Transform* 		tr = pl->AddComponent<Transform>(); // AddComponent<Transform>()는 Transform 컴포넌트를 생성하고 Player 객체에 추가합니다.
-			tr->SetPos(800, 450); 	// Transform 컴포넌트의 위치 설정
-			tr->SetName(L"TR"); 	// Transform 컴포넌트의 이름 설정
-
-			SpriteRenderer* sr = pl->AddComponent<SpriteRenderer>(); // AddComponent<SpriteRenderer>()는 SpriteRenderer 컴포넌트를 생성하고 Player 객체에 추가합니다.
-			sr->SetName(L"SR"); 	// SpriteRenderer 컴포넌트의 이름 설정
-
-			AddGameObject(pl);
-		}
-		
-		{
-			Player* 		pl = new Player();
-			Transform* 		tr = pl->AddComponent<Transform>();
-			tr->SetPos(300, 450);
+			Player* bg = new Player();
+			Transform* tr = bg->AddComponent<Transform>();
+			tr->SetPos(Vector2(0, 0));
 
 			tr->SetName(L"TR");
 
-			SpriteRenderer* sr = pl->AddComponent<SpriteRenderer>();
+			SpriteRenderer* sr = bg->AddComponent<SpriteRenderer>();
 			sr->SetName(L"SR");
+			
+			sr->ImageLoad(L"C:\\Users\\82102\\source\\repos\\2024-07-09\\WindowApp\\Recources\\CloudOcean.png");
 
-			AddGameObject(pl);
-		}
 
-		{
-
-			Player* 		pl = new Player();
-			Transform* 		tr = pl->AddComponent<Transform>();
-			tr->SetPos(100, 650);
-
-			tr->SetName(L"TR");
-
-			SpriteRenderer* sr = pl->AddComponent<SpriteRenderer>();
-			sr->SetName(L"SR");
-
-			AddGameObject(pl);
+			AddGameObject(bg);
 		}
 	}
 
