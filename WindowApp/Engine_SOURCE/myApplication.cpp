@@ -80,14 +80,12 @@ namespace MyApp
     // 8. clearRenderTarget 함수
     void Application::clearRenderTarget()
     {
-        // -1 -1 1601 901 ϴ  Ŀ ȭ ʿϱ ̴.
         Rectangle(mBackHdc, -1, -1, 1601, 901);
     }
 
     // 9. copyRenderTarget 함수
     void Application::copyRenderTarget(HDC source, HDC dest)
     {
-        // Back ̸ ׷ִ° ׸  ؾѴ.
         BitBlt(dest, 0, 0, mWidth, mHeight, source, 0, 0, SRCCOPY);
     }
 
@@ -104,16 +102,14 @@ namespace MyApp
         mHeight = rect.bottom - rect.top;
 
         SetWindowPos(hwnd, nullptr, 0, 0, mWidth, mHeight, 0);
+
         ShowWindow(hwnd, true);
     }
 
     // 11. createBuffer 함수
     void Application::createBuffer(UINT width, UINT height)
     {
-        // ػ󵵿´(ȭ)
         mBackBitmap = CreateCompatibleBitmap(mHdc, width, height);
-
-        //۸ ų DC
         mBackHdc = CreateCompatibleDC(mHdc);
 
         HBITMAP oldBitmap = (HBITMAP)SelectObject(mBackHdc, mBackBitmap);
@@ -123,9 +119,12 @@ namespace MyApp
     // 12. initializeEtc 함수
     void Application::initializeEtc()
     {
-        // 12.1. 입력 시스템 초기화
         Input::Initialize();
-        // 12.2. 시간 시스템 초기화
         Time::Initialize();
     }
 }
+
+// 이 파일은 MyApp 네임스페이스 내에서 Application 클래스를 정의하고 구현합니다. 
+// Application 클래스는 윈도우 애플리케이션의 초기화, 실행, 업데이트, 렌더링 등을 담당합니다. 
+// 주요 함수로는 Initialize, Run, Update, LateUpdate, Render 등이 있으며, 
+// 내부적으로 윈도우 설정, 버퍼 생성, 입력 및 시간 시스템 초기화 등을 수행합니다.
