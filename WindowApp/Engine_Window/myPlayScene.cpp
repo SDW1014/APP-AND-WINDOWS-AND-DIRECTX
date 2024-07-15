@@ -24,7 +24,7 @@ namespace MyApp
 			SpriteRenderer* sr = bg->AddComponent<SpriteRenderer>();
 			sr->SetName(L"SR");
 			
-			sr->ImageLoad(L"C:\\Users\\82102\\source\\repos\\2024-07-09\\WindowApp\\Recources\\CloudOcean.png");
+			sr->ImageLoad(L"C:\\Users\\82102\\source\\repos\\2024-07-09\\WindowApp\\Recources\\MapleStory_Volcano_Wallpaper.png");
 
 
 			AddGameObject(bg);
@@ -42,5 +42,6 @@ namespace MyApp
 	void PlayScene::Render(HDC hdc)
 	{
 		Scene::Render(hdc);
+		Rectangle(hdc, 0, 0, 100, 100);
 	}
 }

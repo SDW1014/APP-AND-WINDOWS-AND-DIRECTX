@@ -14,8 +14,6 @@ namespace MyApp
 	}
 	void SpriteRenderer::Initialize()
 	{
-
-
 	}
 	void SpriteRenderer::Update()
 	{

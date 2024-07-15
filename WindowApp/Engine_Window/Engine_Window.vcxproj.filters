@@ -1,2 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" />
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="myPlayer.cpp" />
+    <ClCompile Include="myPlayScene.cpp" />
+    <ClCompile Include="myPlayScene_2.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="myLoadScenes.h" />
+    <ClInclude Include="myPlayer.h" />
+    <ClInclude Include="myPlayScene.h" />
+    <ClInclude Include="myPlayScene_2.h" />
+  </ItemGroup>
+</Project>
