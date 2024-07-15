@@ -14,8 +14,6 @@ namespace MyApp
 	}
 	void SpriteRenderer::Initialize()
 	{
-
-
 	}
 	void SpriteRenderer::Update()
 	{
@@ -23,7 +21,6 @@ namespace MyApp
 	void SpriteRenderer::LateUpdate()
 	{
 	}
-
 	void SpriteRenderer::Render(HDC hdc)
 	{
 		Transform* tr = GetOwner()->GetComponent<Transform>();
