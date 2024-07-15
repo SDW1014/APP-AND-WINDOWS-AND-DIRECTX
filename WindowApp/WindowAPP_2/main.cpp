@@ -29,14 +29,15 @@ BOOL                InitInstance(HINSTANCE, int);
 LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);
 INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);
 
-int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
-                     _In_opt_ HINSTANCE hPrevInstance,
-                     _In_ LPWSTR    lpCmdLine,
-                     _In_ int       nCmdShow)
+//
+//  함수: wWinMain()
+//
+//  용도: 프로그램의 진입점입니다.
+//
+int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPWSTR    lpCmdLine, _In_ int       nCmdShow)
 {
     UNREFERENCED_PARAMETER(hPrevInstance);
     UNREFERENCED_PARAMETER(lpCmdLine);
-
 
     // TODO: 여기에 코드를 입력합니다.
 
@@ -79,8 +80,6 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     return (int) msg.wParam;
 }
 
-
-
 //
 //  함수: MyRegisterClass()
 //
@@ -92,17 +91,17 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
 
     wcex.cbSize = sizeof(WNDCLASSEX);
 
-    wcex.style          = CS_HREDRAW | CS_VREDRAW;
-    wcex.lpfnWndProc    = WndProc;
-    wcex.cbClsExtra     = 0;
-    wcex.cbWndExtra     = 0;
-    wcex.hInstance      = hInstance;
-    wcex.hIcon          = LoadIcon(hInstance, MAKEINTRESOURCE(IDI_WINDOWAPP2));
-    wcex.hCursor        = LoadCursor(nullptr, IDC_ARROW);
-    wcex.hbrBackground  = (HBRUSH)(COLOR_WINDOW+1);
-    wcex.lpszMenuName   = MAKEINTRESOURCEW(IDC_WINDOWAPP2);
-    wcex.lpszClassName  = szWindowClass;
-    wcex.hIconSm        = LoadIcon(wcex.hInstance, MAKEINTRESOURCE(IDI_SMALL));
+    wcex.style          = CS_HREDRAW | CS_VREDRAW;          // 창의 수평 및 수직 크기 조정 시 화면을 다시 그립니다.
+    wcex.lpfnWndProc    = WndProc;                          // 창의 메시지를 처리하는 함수의 포인터입니다.
+    wcex.cbClsExtra     = 0;                                // 클래스 구조체에 추가적인 메모리를 할당하지 않습니다.
+    wcex.cbWndExtra     = 0;                                // 윈도우 구조체에 추가적인 메모리를 할당하지 않습니다.
+    wcex.hInstance      = hInstance;                        // 현재 인스턴스의 핸들입니다.
+    wcex.hIcon          = LoadIcon(hInstance, MAKEINTRESOURCE(IDI_WINDOWAPP2)); // 큰 아이콘을 로드합니다.
+    wcex.hCursor        = LoadCursor(nullptr, IDC_ARROW);   // 기본 화살표 커서를 사용합니다.
+    wcex.hbrBackground  = (HBRUSH)(COLOR_WINDOW+1);         // 창의 배경을 흰색으로 설정합니다.
+    wcex.lpszMenuName   = MAKEINTRESOURCEW(IDC_WINDOWAPP2); // 메뉴 리소스의 이름입니다.
+    wcex.lpszClassName  = szWindowClass;                    // 창 클래스의 이름입니다.
+    wcex.hIconSm        = LoadIcon(wcex.hInstance, MAKEINTRESOURCE(IDI_SMALL)); // 작은 아이콘을 로드합니다.
 
     return RegisterClassExW(&wcex);
 }
@@ -124,8 +123,19 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
    const UINT width = 1600;
    const UINT height = 900;
 
-   HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
-      CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
+   // 창을 생성합니다. 창 클래스 이름, 제목, 스타일, 위치, 크기, 부모 창, 메뉴, 인스턴스, 생성 매개 변수를 지정합니다.
+   HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
+
+   //
+   //  함수: InitInstance(HINSTANCE, int) 내부 코드
+   //
+   //  용도: 애플리케이션 초기화 및 창 생성
+   //
+   //  주석:
+   //
+   //        이 코드는 애플리케이션을 초기화하고 창을 생성한 다음
+   //        Gdiplus를 초기화하고 씬을 로드합니다.
+   //
 
    // 2024-07-11 Application 클래스의 Initialize함수를 호출
    application.Initialize(hWnd, width, height);
