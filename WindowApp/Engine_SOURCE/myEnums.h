@@ -1,7 +1,7 @@
 #pragma once
 
 
-namespace MyApp
+namespace MyApp::enums
 {
 	enum class eLayerType
 	{
