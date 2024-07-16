@@ -20,12 +20,18 @@ namespace MyApp
 
 		static Scene* LoadScene(const std::wstring& name)
 		{
+			// 이미 활성화된 씬이 있으면 종료 함수를 호출합니다.
+			if (mActiveScene)
+				mActiveScene->OnExit();
+				
 			std::map<const std::wstring, Scene*>::iterator iter = mScene.find(name);
 
 			if (iter == mScene.end())
 				return nullptr;
 
 			mActiveScene = iter->second;
+			// 시작 함수를 호출합니다.
+			mActiveScene->OnEnter();
 
 			return mActiveScene;
 		}
