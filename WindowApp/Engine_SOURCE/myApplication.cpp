@@ -59,6 +59,7 @@ namespace MyApp
     // 6. LateUpdate 함수 (현재 비어있음)
     void Application::LateUpdate()
     {
+        SceneManager::LateUpdate();
     }
 
     // 7. Render 함수
