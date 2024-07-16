@@ -1,35 +1,35 @@
 #pragma once
-#include "myEntity.h"
-#include "CommonInclude.h"
-#include "myGameObject.h"
+#include "myEntity.h" // Entity 클래스를 포함합니다.
+#include "CommonInclude.h" // 공통 포함 파일을 포함합니다.
+#include "myGameObject.h" // GameObject 클래스를 포함합니다.
 
 namespace MyApp
 {
-	// Layer 클래스: Entity를 상속받는 레이어 클래스
+	// Layer 클래스는 Entity를 상속받습니다. 레이어를 나타내는 클래스입니다.
 	class Layer : public Entity
 	{
 	public:
-		// 생성자
+		// Layer 클래스의 생성자입니다.
 		Layer();
-		// 소멸자
+		// Layer 클래스의 소멸자입니다.
 		~Layer();
 
-		// 초기화 함수
+		// Layer를 초기화하는 함수입니다.
 		virtual void Initialize();
-		// 업데이트 함수
+		// Layer를 업데이트하는 함수입니다.
 		virtual void Update();
-		// 늦은 업데이트 함수
+		// Layer의 늦은 업데이트를 처리하는 함수입니다.
 		virtual void LateUpdate();
-		// 렌더링 함수
+		// Layer를 렌더링하는 함수입니다.
 		virtual void Render(HDC hdc);
 
-		// 게임 오브젝트 추가 함수
+		// Layer에 게임 오브젝트를 추가하는 함수입니다.
 		void AddGameObject(GameObject* gameObject);
 
 	private:
-		// 레이어 타입
+		// Layer의 타입을 나타내는 변수입니다. (현재 사용하지 않음)
 		//eLayerType mType;
-		// 게임 오브젝트 벡터
+		// Layer에 속한 게임 오브젝트들을 저장하는 벡터입니다.
 		std::vector<GameObject*> mGameObjects;
 	};
 }
