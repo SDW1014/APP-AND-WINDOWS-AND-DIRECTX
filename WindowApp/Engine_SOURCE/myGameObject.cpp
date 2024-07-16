@@ -1,12 +1,14 @@
 #include "myGameObject.h"
 #include "myInput.h"
 #include "myTime.h"
+#include "myTransform.h"
 
 namespace MyApp
 {
 	// GameObject 클래스의 생성자
 	GameObject::GameObject()
 	{
+		initializeTransform();
 	}
 
 	// GameObject 클래스의 소멸자
@@ -58,5 +60,9 @@ namespace MyApp
 		{
 			comp->Render(hdc); // 각 컴포넌트의 Render 메서드를 호출합니다.
 		}
+	}
+	void GameObject::initializeTransform()
+	{
+		AddComponent<Transform>();
 	}
 }
