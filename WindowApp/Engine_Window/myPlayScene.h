@@ -1,5 +1,7 @@
 #pragma once
+
 #include "..\\Engine_SOURCE\\myScene.h"
+#include "myCloud.h"
 namespace MyApp
 {
 	// PlayScene 클래스는 Scene 클래스를 상속합니다.
@@ -23,5 +25,6 @@ namespace MyApp
 	private:
 		// Player 클래스의 포인터를 멤버 변수로 선언합니다.
 		class Player* bg;
+		class Cloud* cloud;
 	};
 }

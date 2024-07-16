@@ -7,6 +7,7 @@ namespace MyApp::enums
 	{
 		None,
 		BackGround,
+		Middle,
 		//Tree 
 		//character
 		Player,
