@@ -7,7 +7,7 @@ namespace MyApp
 		: mLayers{}
 	{
 		// 모든 레이어를 생성합니다.
-		CreateLayers();
+		createLayers();
 	}
 	// Scene 소멸자
 	Scene::~Scene()
@@ -63,18 +63,15 @@ namespace MyApp
 	}
 
 	// 특정 레이어에 게임 오브젝트를 추가하는 함수
-	void Scene::AddGameObject(GameObject* gameObj, const eLayerType type)
+	void Scene::AddGameObject(GameObject* gameObj, const enums::eLayerType type)
 	{
 		mLayers[(UINT)type]->AddGameObject(gameObj);
 	}
 
-	// 모든 레이어를 생성하는 함수
-	void Scene::CreateLayers()
+	void Scene::createLayers()
 	{
-		// 모든 레이어 타입에 맞게 벡터의 크기를 조정합니다.
-		mLayers.resize((UINT)eLayerType::Max);
-		// 각 레이어를 생성합니다.
-		for (size_t i = 0; i < (UINT)eLayerType::Max; i++)
+		mLayers.resize((UINT)enums::eLayerType::Max);
+		for (size_t i = 0; i < (UINT)enums::eLayerType::Max; i++)
 		{
 			mLayers[i] = new Layer();
 		}

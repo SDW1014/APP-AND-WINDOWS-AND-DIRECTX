@@ -1,5 +1,4 @@
 #pragma once
-#include "CommonInclude.h" // 공통 포함 파일
 #include "myEntity.h" // 엔티티 클래스
 #include "myGameObject.h" // 게임 오브젝트 클래스
 #include "myLayer.h" // 레이어 클래스
@@ -29,12 +28,15 @@ namespace MyApp
 		// 씬 퇴장 시 호출
 		virtual void OnExit();
 
-		// 게임 오브젝트를 특정 레이어에 추가
-		void AddGameObject(GameObject* gameObj, const eLayerType type);
+		// 게임 오브젝트 추가 함수
+		void AddGameObject(GameObject* gameObj, const enums::eLayerType type);
+		
+		// 레이어 가져오는 함수
+		Layer* GetLayer(const enums::eLayerType type) { return mLayers[(UINT)type]; }
 
 	private:
 		// 레이어 생성 함수
-		void CreateLayers();
+		void createLayers();
 
 	private:
 		// 레이어 벡터

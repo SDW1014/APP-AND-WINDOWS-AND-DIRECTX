@@ -22,6 +22,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)myGameObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)myInput.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)myLayer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)myObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)myScene.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)mySceneManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)mySpriteRenderer.h" />
