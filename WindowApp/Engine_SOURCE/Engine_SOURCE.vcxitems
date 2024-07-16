@@ -18,8 +18,10 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)myApplication.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)myComponent.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)myEntity.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)myEnums.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)myGameObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)myInput.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)myLayer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)myScene.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)mySceneManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)mySpriteRenderer.h" />
@@ -33,6 +35,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)myEntity.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)myGameObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)myInput.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)myLayer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)myScene.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)mySceneManager.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)mySpriteRenderer.cpp" />
