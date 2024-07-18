@@ -23,6 +23,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)myInput.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)myLayer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)myObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)myResource.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)myScene.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)mySceneManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)mySpriteRenderer.h" />
@@ -37,6 +38,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)myGameObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)myInput.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)myLayer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)myResource.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)myScene.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)mySceneManager.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)mySpriteRenderer.cpp" />
