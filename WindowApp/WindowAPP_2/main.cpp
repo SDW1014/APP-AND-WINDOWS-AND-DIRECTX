@@ -1,7 +1,7 @@
-﻿// title : Engine처럼 Scene을 나누기 예제
+﻿// title : 리소스를 정리해보자
 // explanation : Engine처럼 Scene을 나누어서 구현하는 예제를 만들었다.
 // author : SDW
-// date : 2024-07-14
+// date : 2024-07-18
 
 #include "framework.h"
 #include "WindowAPP_2.h"
