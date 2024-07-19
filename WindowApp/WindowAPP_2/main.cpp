@@ -8,6 +8,7 @@
 
 // 2024-07-11 MaApp을 기준으로 하는 header파일을 include
 #include "..\\Engine_SOURCE\\myApplication.h"
+#include "..\\Engine_Window\\myLoadResources.h"
 #include "..\\Engine_Window\\myLoadScenes.h"
 
 // 2024-07-11 Application 클래스의 객체 생성
@@ -151,8 +152,11 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
     // 2024-07-14 Gdiplus 초기화 추가
     Gdiplus::GdiplusStartup(&gpToken, &gpsi, NULL);
 
+    // 2024-07-19 load Resources
+   MyApp::LoadResources();
    // 2024-07-14 load Scenes
    MyApp::LoadScenes();
+   
 
    return TRUE;
 }

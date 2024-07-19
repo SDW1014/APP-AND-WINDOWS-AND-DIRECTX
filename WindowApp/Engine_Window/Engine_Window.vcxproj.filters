@@ -10,5 +10,6 @@
     <ClInclude Include="myPlayer.h" />
     <ClInclude Include="myPlayScene.h" />
     <ClInclude Include="myTitleScene.h" />
+    <ClInclude Include="myLoadResources.h" />
   </ItemGroup>
 </Project>

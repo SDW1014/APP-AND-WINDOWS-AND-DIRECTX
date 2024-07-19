@@ -4,6 +4,9 @@ namespace MyApp::math
 {
     struct Vector2
     {
+        static Vector2 One;
+		static Vector2 Zero;
+
         float x, y;
 
         Vector2() : x(0), y(0) {}

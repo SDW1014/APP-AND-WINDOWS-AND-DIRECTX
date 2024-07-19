@@ -1,43 +1,32 @@
 #pragma once
 #include "myEntity.h"
+
+
 namespace MyApp
 {
-    /**
-     * @brief 리소스를 나타내는 클래스입니다.
-     * 이 클래스는 Entity를 상속받습니다.
-     */
-    class Resource : public Entity
-    {
-    public:
-        /**
-         * @brief 생성자
-         * @param type 리소스의 타입
-         * @param path 리소스의 경로
-         */
-        Resource(enums::eResourceType type, const std::wstring& path)
-            : mType(type), mPath(path) {}
-        /**
-         * @brief 소멸자
-         */
-        virtual ~Resource() {}
+	class Resource abstract : public Entity // 추상 클래스 메모리 할당 X 상속받아서만 사용해야한다.
+	{
+	public:
+		Resource(enums::eResourceType type);
+		virtual ~Resource();
 
-        /**
-         * @brief 리소스의 타입을 반환합니다.
-         * @return 리소스의 타입
-         */
-        enums::eResourceType GetType() const { return mType; }
-        /**
-         * @brief 리소스의 경로를 반환합니다.
-         * @return 리소스의 경로
-         */
-        const std::wstring& GetPath() const { return mPath; }
+		virtual HRESULT Load(const std::wstring& path) = 0; // 순수가상함수 실제메모리 할당이 불가능해지는 문법이다.
 
-    private:
-        enums::eResourceType mType;             // 리소스 타입
-        std::wstring mPath;                     // 리소스 경로
-    };
+		const std::wstring& GetPath() { return mPath; }
+		void SetPath(const std::wstring& path) { mPath = path; }
+
+	private:
+		const enums::eResourceType mType;
+		std::wstring mPath;
+	};
+	//Resource test;
+	//class Texture : public Resource;
+	//class AudioClip : public Resource;
 }
 
-// 게임에서 사용되는 다양한 데이터 종류를 정의하는 클래스입니다.
-// 예를 들어 이미지, 사운드, 저장된 게임 플레이 데이터(HDD, 클라우드 저장 포함) 등이 있습니다.
-// 이러한 모든 데이터를 리소스라고 간주할 수 있습니다.
+//게임에서 사용되는 데이터들의 종류
+
+// 이미지, 사운드,,  3스테이지 클리어
+
+// 저장 게임 플레이데이터 HDD, 클라우드 저장을 해둔다.
+// 이것도 리소스 이다.

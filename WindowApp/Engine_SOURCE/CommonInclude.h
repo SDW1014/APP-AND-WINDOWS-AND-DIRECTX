@@ -18,6 +18,7 @@
 #include <algorithm>
 #include <string>
 #include <map>
+#include <assert.h>
 
 // 5. 사용자 정의 열거형
 #include "myEnums.h"

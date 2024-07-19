@@ -8,12 +8,12 @@ namespace MyApp::enums
 	 */
 	enum class eLayerType
 	{
-		None, 		// 아무것도 없는 상태
+		None,	// 아무것도 없는 상태
 		BackGround, // 배경 레이어
-		Tree, 		// 나무 레이어
-		Character, 	// 캐릭터 레이어
-		Player, 	// 플레이어 레이어
-		Max = 16, 	// 최대 레이어 수
+		//Tree 	// 나무 레이어
+		//character 	// 캐릭터 레이어
+		Player,	// 플레이어 레이어
+		Max = 16,	// 최대 레이어 수
 	};
 
 	/**
