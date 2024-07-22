@@ -11,6 +11,7 @@ namespace MyApp::enums
 		Transform,
 		SpriteRenderer,
 		Script,
+		Camera,
 		End
 	};
 

@@ -8,7 +8,7 @@ namespace MyApp
 	// GameObject 클래스의 생성자
 	GameObject::GameObject()
 	{
-		mComponents.resize((UINT)enums::eComponentType::Script);
+		mComponents.resize((UINT)enums::eComponentType::End);
 		initializeTransform();
 	}
 
