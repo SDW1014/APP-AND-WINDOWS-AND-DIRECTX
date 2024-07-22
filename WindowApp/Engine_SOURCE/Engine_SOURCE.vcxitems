@@ -16,6 +16,7 @@
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)CommonInclude.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)myApplication.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)myCamera.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)myComponent.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)myEntity.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)myEnums.h" />
@@ -24,6 +25,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)myLayer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)myMath.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)myObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)myRenderer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)myResource.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)myResources.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)myScene.h" />
@@ -37,12 +39,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)myApplication.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)myCamera.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)myComponent.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)myEntity.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)myGameObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)myInput.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)myLayer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)myMath.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)myRenderer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)myResource.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)myResources.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)myScene.cpp" />

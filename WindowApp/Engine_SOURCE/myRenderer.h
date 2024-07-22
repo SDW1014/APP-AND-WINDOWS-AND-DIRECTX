@@ -1,5 +1,7 @@
 #pragma once
-class Renderer
+#include "myCamera.h"
+namespace MyApp::renderer
 {
-};
+    extern Camera* mainCamera;
+}
 

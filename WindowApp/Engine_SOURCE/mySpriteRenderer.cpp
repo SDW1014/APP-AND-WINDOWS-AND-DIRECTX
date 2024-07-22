@@ -2,6 +2,8 @@
 #include "myGameObject.h"
 #include "myTransform.h"
 #include "myTexture.h"
+#include "myRenderer.h"
+
 namespace MyApp
 {
 	SpriteRenderer::SpriteRenderer()
@@ -32,17 +34,13 @@ namespace MyApp
 
 		Transform* tr = GetOwner()->GetComponent<Transform>();
 		Vector2 pos = tr->GetPosition();
+		pos = renderer::mainCamera->CaluatePostion(pos);
 
-		if (mTexture->GetTextureType() 
-			== graphics::Texture::eTextureType::Bmp)
+		if (mTexture->GetTextureType() == graphics::Texture::eTextureType::Bmp)
 		{
-			TransparentBlt(hdc, pos.x, pos.y
-				, mTexture->GetWidth() * mSize.x, mTexture->GetHeight() * mSize.y
-				, mTexture->GetHdc(), 0, 0, mTexture->GetWidth(), mTexture->GetHeight()
-				, RGB(255, 0, 255));
+			TransparentBlt(hdc, pos.x, pos.y, mTexture->GetWidth() * mSize.x, mTexture->GetHeight() * mSize.y , mTexture->GetHdc(), 0, 0, mTexture->GetWidth(), mTexture->GetHeight() , RGB(255, 0, 255));
 		}
-		else if (mTexture->GetTextureType()
-			== graphics::Texture::eTextureType::Png)
+		else if (mTexture->GetTextureType() == graphics::Texture::eTextureType::Png)
 		{
 			Gdiplus::Graphics graphics(hdc);
 			graphics.DrawImage(mTexture->GetImage()

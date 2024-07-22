@@ -11,6 +11,7 @@
 #include "myResources.h"
 #include "myPlayerScript.h"
 #include "myCamera.h"
+#include "myRenderer.h"
 
 namespace MyApp
 {
@@ -25,7 +26,9 @@ namespace MyApp
 		// 2024-07-22 카메라를 만들어 보자 
 		// There is Main Camera
 		GameObject* camera = object::Instantiate<GameObject>(enums::eLayerType::None);
-		camera->AddComponent<Camera>();
+		Camera* cameraComp = camera->AddComponent<Camera>();
+		renderer::mainCamera = cameraComp;
+		
 		camera->AddComponent<PlayerScript>();
 
 		//게임오브젝트 만들기전에 리소스들 전부 Load해두면 좋다.
