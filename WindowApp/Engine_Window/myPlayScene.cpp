@@ -9,6 +9,7 @@
 #include "myObject.h"
 #include "myTexture.h"
 #include "myResources.h"
+#include "myPlayerScript.h"
 
 namespace MyApp
 {
@@ -23,6 +24,8 @@ namespace MyApp
 		//게임오브젝트 만들기전에 리소스들 전부 Load해두면 좋다.
 		bg = object::Instantiate<Player>(enums::eLayerType::BackGround/*, Vector2(100.0f, 100.0f)*/);
 		SpriteRenderer* sr = bg->AddComponent<SpriteRenderer>();
+
+		bg->AddComponent<PlayerScript>();
 
 		graphics::Texture* bg = Resources::Find<graphics::Texture>(L"BG");
 		sr->SetTexture(bg);
