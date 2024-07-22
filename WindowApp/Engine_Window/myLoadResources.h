@@ -6,6 +6,6 @@ namespace MyApp
 {
 	void LoadResources()
 	{
-		Resources::Load<graphics::Texture>(L"BG", L"C:\\Users\\82102\\source\\repos\\2024-07-09\\WindowApp\\Resources\\CloudOcean.png");
+		Resources::Load<graphics::Texture>(L"BG", L"C:\\Users\\82102\\source\\repos\\2024-07-09\\WindowApp\\Recources\\CloudOcean.png");
 	}
 }
