@@ -10,7 +10,7 @@ namespace MyApp
 	{
 	public:
 		// 생성자
-		Component();
+		Component(enums::eComponentType type);
 		
 		// 소멸자
 		~Component();
@@ -33,7 +33,10 @@ namespace MyApp
 		// 소유자(GameObject)를 반환하는 메서드
 		GameObject* GetOwner() { return mOwner; }
 
+		// 컴포넌트의 타입을 반환하는 메서드
+		enums::eComponentType GetType() { return mType; }
 	private:
 		GameObject* mOwner; // 이 컴포넌트를 소유하는 게임 객체
+		enums::eComponentType mType; // 컴포넌트의 타입
 	};
 }

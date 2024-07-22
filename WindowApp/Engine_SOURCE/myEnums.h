@@ -4,6 +4,17 @@
 namespace MyApp::enums
 {
 	/**
+	 * @brief 게임에서 사용되는 컴포넌트 타입을 정의합니다.
+	 */
+	enum class eComponentType
+	{
+		Transform,
+		SpriteRenderer,
+		Script,
+		End
+	};
+
+	/**
 	 * @brief 게임에서 사용되는 레이어 타입을 정의합니다.
 	 */
 	enum class eLayerType

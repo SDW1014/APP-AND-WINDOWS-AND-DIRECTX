@@ -1,6 +1,12 @@
 {
     "files.associations": {
         "map": "cpp",
-        "xtree": "cpp"
+        "xtree": "cpp",
+        "deque": "cpp",
+        "forward_list": "cpp",
+        "list": "cpp",
+        "vector": "cpp",
+        "xstring": "cpp",
+        "charconv": "cpp"
     }
 }

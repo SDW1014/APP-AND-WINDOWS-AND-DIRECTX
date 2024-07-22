@@ -8,6 +8,7 @@ namespace MyApp
 	// GameObject 클래스의 생성자
 	GameObject::GameObject()
 	{
+		mComponents.resize((UINT)enums::eComponentType::Script);
 		initializeTransform();
 	}
 
@@ -28,6 +29,9 @@ namespace MyApp
 		// 모든 컴포넌트를 초기화합니다.
 		for (Component* comp : mComponents)
 		{
+			if (comp == nullptr)
+				continue;
+
 			comp->Initialize(); // 각 컴포넌트의 Initialize 메서드를 호출합니다.
 		}
 	}
@@ -38,6 +42,8 @@ namespace MyApp
 		// 모든 컴포넌트를 업데이트합니다.
 		for (Component* comp : mComponents)
 		{
+			if (comp == nullptr)
+				continue;
 			comp->Update(); // 각 컴포넌트의 Update 메서드를 호출합니다.
 		}
 	}
@@ -48,6 +54,8 @@ namespace MyApp
 		// 모든 컴포넌트를 후처리 업데이트합니다.
 		for (Component* comp : mComponents)
 		{
+			if (comp == nullptr)
+				continue;
 			comp->LateUpdate(); // 각 컴포넌트의 LateUpdate 메서드를 호출합니다.
 		}
 	}
@@ -58,6 +66,8 @@ namespace MyApp
 		// 모든 컴포넌트를 렌더링합니다.
 		for (Component* comp : mComponents)
 		{
+			if (comp == nullptr)
+				continue;
 			comp->Render(hdc); // 각 컴포넌트의 Render 메서드를 호출합니다.
 		}
 	}
