@@ -11,6 +11,7 @@ namespace MyApp::graphics
 		{
 			Bmp,
 			Png,
+			Jpg,
 			None,
 		};
 

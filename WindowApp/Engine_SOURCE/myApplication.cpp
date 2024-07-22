@@ -11,8 +11,8 @@ namespace MyApp
         , mHdc(nullptr)
         , mWidth(0)
         , mHeight(0)
-        , mBackHdc(nullptr)
-        , mBackBitmap(nullptr)
+        , mBackHdc(NULL)
+        , mBackBitmap(NULL)
     {
     }
 

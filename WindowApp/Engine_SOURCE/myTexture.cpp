@@ -45,6 +45,7 @@ namespace MyApp::graphics
 		else if (ext == L"png")
 		{
 			mType = eTextureType::Png;
+			//assert(_waccess(path.c_str(), 0) == 0 && L"File does not exist");
 			mImage = Gdiplus::Image::FromFile(path.c_str());
 			if (mImage == nullptr)
 				return S_FALSE;

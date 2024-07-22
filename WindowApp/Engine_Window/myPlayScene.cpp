@@ -21,10 +21,10 @@ namespace MyApp
 	void PlayScene::Initialize()
 	{
 		//게임오브젝트 만들기전에 리소스들 전부 Load해두면 좋다.
-		bg = object::Instantiate<Player>(enums::eLayerType::BackGround/*, Vector2(100.0f, 100.0f)*/);
+		bg = object::Instantiate<Player>(enums::eLayerType::BackGround);
 		SpriteRenderer* sr = bg->AddComponent<SpriteRenderer>();
 
-		graphics::Texture* bg = Resources::Find<graphics::Texture>(L"BG");
+		graphics::Texture* bg = Resources::Find<graphics::Texture>(L"img_CloudOcean");
 		sr->SetTexture(bg);
 		
 		// 게임 오브젝트 생성후에 레이어와 게임오브젝트들의 init함수를 호출
