@@ -22,6 +22,6 @@ namespace MyApp
 
 	private:
 		// Player 클래스의 포인터를 멤버 변수로 선언합니다.
-		class Player* bg;
+		class Player* mPlayer;
 	};
 }
