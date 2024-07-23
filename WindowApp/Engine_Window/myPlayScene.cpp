@@ -23,33 +23,28 @@ namespace MyApp
 	}
 	void PlayScene::Initialize()
 	{
-		// 2024-07-22 카메라를 만들어 보자 
-		// There is Main Camera
+		// 2024-07-22 카메라와 게임 오브젝트를 초기화합니다.
+		
+		// 메인 카메라 생성
 		GameObject* camera = object::Instantiate<GameObject>(enums::eLayerType::None, Vector2(344.f, 442.f));
 		Camera* cameraComp = camera->AddComponent<Camera>();
 		renderer::mainCamera = cameraComp;
-
 		
 
-		//게임오브젝트 만들기전에 리소스들 전부 Load해두면 좋다.
-		mPlayer = object::Instantiate<Player>(enums::eLayerType::Player/*, Vector2(100.0f, 100.0f)*/);
-		SpriteRenderer* sr = mPlayer->AddComponent<SpriteRenderer>();
-		sr->SetSize(Vector2(3.0f, 3.0f));
-
+		// 플레이어 생성 및 초기화
+		mPlayer = object::Instantiate<Player>(enums::eLayerType::Player);
+		SpriteRenderer* playerRenderer = mPlayer->AddComponent<SpriteRenderer>();
+		playerRenderer->SetSize(Vector2(3.0f, 3.0f));
 		mPlayer->AddComponent<PlayerScript>();
+		playerRenderer->SetTexture(Resources::Find<graphics::Texture>(L"PackMan"));
 
-		graphics::Texture* packmanTexture = Resources::Find<graphics::Texture>(L"PackMan");
-		sr->SetTexture(packmanTexture);
-
-		//게임오브젝트 만들기전에 리소스들 전부 Load해두면 좋다.
-		GameObject* bg = object::Instantiate<Player>(enums::eLayerType::BackGround/*, Vector2(100.0f, 100.0f)*/);
-		SpriteRenderer* bgSr = bg->AddComponent<SpriteRenderer>();
-		bgSr->SetSize(Vector2(3.0f, 3.0f));
-
-		graphics::Texture* bgTexture = Resources::Find<graphics::Texture>(L"Map");
-		bgSr->SetTexture(bgTexture);
+		// 배경 생성 및 초기화
+		GameObject* bg = object::Instantiate<GameObject>(enums::eLayerType::BackGround);
+		SpriteRenderer* bgRenderer = bg->AddComponent<SpriteRenderer>();
+		bgRenderer->SetSize(Vector2(3.0f, 3.0f));
+		bgRenderer->SetTexture(Resources::Find<graphics::Texture>(L"Map"));
 		
-		// 게임 오브젝트 생성후에 레이어와 게임오브젝트들의 init함수를 호출
+		// 게임 오브젝트 생성 후 초기화 호출
 		Scene::Initialize();
 	}
 
