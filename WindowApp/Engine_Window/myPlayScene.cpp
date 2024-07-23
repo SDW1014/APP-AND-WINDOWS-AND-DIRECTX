@@ -12,6 +12,7 @@
 #include "myPlayerScript.h"
 #include "myCamera.h"
 #include "myRenderer.h"
+#include "myAnimator.h"
 
 namespace MyApp
 {
@@ -33,10 +34,14 @@ namespace MyApp
 
 		// 플레이어 생성 및 초기화
 		mPlayer = object::Instantiate<Player>(enums::eLayerType::Player);
-		SpriteRenderer* playerRenderer = mPlayer->AddComponent<SpriteRenderer>();
-		playerRenderer->SetSize(Vector2(3.0f, 3.0f));
+		// SpriteRenderer* playerRenderer = mPlayer->AddComponent<SpriteRenderer>();
+		// playerRenderer->SetSize(Vector2(3.0f, 3.0f));
 		mPlayer->AddComponent<PlayerScript>();
-		playerRenderer->SetTexture(Resources::Find<graphics::Texture>(L"PackMan"));
+		// playerRenderer->SetTexture(Resources::Find<graphics::Texture>(L"Cat"));
+		graphics::Texture* packman = Resources::Find<graphics::Texture>(L"Cat");
+		Animator* animator = mPlayer->AddComponent<Animator>();
+		animator->CreateAnimation(L"CatFrontMove", packman, Vector2::Zero, Vector2(32.f, 32.f), Vector2::Zero, 4, 0.5f);
+		animator->PlayAnimation(L"CatFrontMove", true);
 
 		// 배경 생성 및 초기화
 		GameObject* bg = object::Instantiate<GameObject>(enums::eLayerType::BackGround);

@@ -10,6 +10,7 @@ namespace MyApp::enums
 	{
 		Transform,
 		SpriteRenderer,
+		Animator,
 		Script,
 		Camera,
 		End
@@ -35,6 +36,7 @@ namespace MyApp::enums
 	{
 		Texture,    // 텍스처 리소스
 		AudioClip,  // 오디오 클립 리소스
+		Animation,  // 애니메이션 리소스
 		Prefab,     // 프리팹 리소스
 		End,        // 리소스 종료
 	};

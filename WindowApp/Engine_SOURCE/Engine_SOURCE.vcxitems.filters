@@ -1,3 +1,134 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)myEntity.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)myInput.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)myMath.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)myTexture.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)myTime.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)myVector.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)myApplication.cpp">
+      <Filter>어플리케이션</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)myAnimator.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)myCamera.cpp">
+      <Filter>컴포넌트</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)myComponent.cpp">
+      <Filter>컴포넌트</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)myAnimation.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)myScript.cpp">
+      <Filter>컴포넌트</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)mySpriteRenderer.cpp">
+      <Filter>컴포넌트</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)myTransform.cpp">
+      <Filter>컴포넌트</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)myLayer.cpp">
+      <Filter>레이어</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)myGameObject.cpp">
+      <Filter>게임 오브젝트</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)myResource.cpp">
+      <Filter>리소스</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)myResources.cpp">
+      <Filter>리소스</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)myScene.cpp">
+      <Filter>씬</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)mySceneManager.cpp">
+      <Filter>씬</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)myRenderer.cpp">
+      <Filter>렌더러</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)myEntity.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)myEnums.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)myInput.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)myMath.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)myTexture.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)myTime.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)myVector.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)myApplication.h">
+      <Filter>어플리케이션</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)myAnimator.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)myCamera.h">
+      <Filter>컴포넌트</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)myComponent.h">
+      <Filter>컴포넌트</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)myAnimation.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)myScript.h">
+      <Filter>컴포넌트</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)mySpriteRenderer.h">
+      <Filter>컴포넌트</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)myTransform.h">
+      <Filter>컴포넌트</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)myLayer.h">
+      <Filter>레이어</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)myGameObject.h">
+      <Filter>게임 오브젝트</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)myResources.h">
+      <Filter>리소스</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)myResource.h">
+      <Filter>리소스</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)CommonInclude.h">
+      <Filter>공통</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)myObject.h">
+      <Filter>게임 오브젝트</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)myScene.h">
+      <Filter>씬</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)mySceneManager.h">
+      <Filter>씬</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)myRenderer.h">
+      <Filter>렌더러</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="어플리케이션">
+      <UniqueIdentifier>{844448f4-d7ed-4a44-9ca2-4f2ce18db224}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="컴포넌트">
+      <UniqueIdentifier>{4e70b663-a0ca-405e-86a7-eb74a82c99ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="레이어">
+      <UniqueIdentifier>{6a1ad3d5-76fd-450c-bed5-bfe29ae9ef39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="게임 오브젝트">
+      <UniqueIdentifier>{444a0c6e-1e6d-4b9a-a2d9-36aaf31ada79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="리소스">
+      <UniqueIdentifier>{41a48b3e-99b3-4ff5-9e3f-a76478afe0fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="공통">
+      <UniqueIdentifier>{35d80481-5d82-47ec-b406-afec31f238e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="씬">
+      <UniqueIdentifier>{0adaa1f8-1279-4905-8012-68431e109dc9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="렌더러">
+      <UniqueIdentifier>{8bf76cb5-6d2f-4bcf-be14-6fbb56e8abd7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
 </Project>
