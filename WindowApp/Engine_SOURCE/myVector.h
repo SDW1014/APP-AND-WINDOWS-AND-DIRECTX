@@ -1,6 +1,4 @@
 #pragma once
-
-
 namespace MyApp::math
 {
 	struct Vector2
@@ -12,7 +10,6 @@ namespace MyApp::math
 			: x(0.0f)
 			, y(0.0f)
 		{
-
 		}
 
 		Vector2(float _x, float _y)
@@ -21,7 +18,5 @@ namespace MyApp::math
 		{
 
 		}
-
-
 	};
 }
