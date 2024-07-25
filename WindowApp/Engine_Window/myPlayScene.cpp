@@ -13,6 +13,7 @@
 #include "myCamera.h"
 #include "myRenderer.h"
 #include "myAnimator.h"
+#include "myCatPlayerScript.h"
 
 namespace MyApp
 {
@@ -33,15 +34,16 @@ namespace MyApp
 
 		/// @brief 플레이어 생성 및 초기화
 		mPlayer = object::Instantiate<Player>(enums::eLayerType::Player);
-		mPlayer->AddComponent<PlayerScript>();
-		
-		graphics::Texture* TheCat = Resources::Find<graphics::Texture>(L"Cat");
+
 		Animator* animator = mPlayer->AddComponent<Animator>();
-		animator->CreateAnimation(L"CatFrontMove", TheCat, Vector2::Zero, Vector2(32.f, 32.f), Vector2::Zero, 4, 0.5f);
-		animator->CreateAnimation(L"CatRightMove", TheCat, Vector2(0.f, 32.f), Vector2(32.f, 32.f), Vector2::Zero, 4, 0.5f);
-		animator->CreateAnimation(L"CatBackMove", TheCat, Vector2(0.f, 64.f), Vector2(32.f, 32.f), Vector2::Zero, 4, 0.5f);
-		animator->CreateAnimation(L"CatLeftMove", TheCat, Vector2(0.f, 96.f), Vector2(32.f, 32.f), Vector2::Zero, 4, 0.5f);
-		animator->PlayAnimation(L"CatFrontMove", true);
+        graphics::Texture* rogueTexture = Resources::Find<graphics::Texture>(L"Rogue2");
+
+        animator->CreateAnimation(L"RogueFrontMove", rogueTexture, Vector2(0.f, 0.f), Vector2(32.f, 32.f), Vector2::Zero, 10, 0.3f);
+        animator->PlayAnimation(L"RogueFrontMove", true);
+
+		mPlayer->AddComponent<CatPlayerScript>();
+		
+		
 
 		/// @brief 배경 생성 및 초기화
 		GameObject* bg = object::Instantiate<GameObject>(enums::eLayerType::BackGround);
@@ -64,22 +66,6 @@ namespace MyApp
 		if (Input::GetKeyDown(eKeyCode::N))
 		{
 			SceneManager::LoadScene(L"TitleScene");
-		}
-		if (Input::GetKeyDown(eKeyCode::Right))
-		{
-			mPlayer->GetComponent<Animator>()->PlayAnimation(L"CatRightMove", true);
-		}
-		else if (Input::GetKeyDown(eKeyCode::Left))
-		{
-			mPlayer->GetComponent<Animator>()->PlayAnimation(L"CatLeftMove", true);
-		}
-		else if (Input::GetKeyDown(eKeyCode::Up))
-		{
-			mPlayer->GetComponent<Animator>()->PlayAnimation(L"CatFrontMove", true);
-		}
-		else if (Input::GetKeyDown(eKeyCode::Down))
-		{
-			mPlayer->GetComponent<Animator>()->PlayAnimation(L"CatBackMove", true);
 		}
 	}
 	void PlayScene::Render(HDC hdc)
