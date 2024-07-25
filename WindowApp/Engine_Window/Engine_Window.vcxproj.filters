@@ -13,7 +13,12 @@
     <ClCompile Include="myTitleScene.cpp">
       <Filter>씬</Filter>
     </ClCompile>
-    <ClCompile Include="myCatPlayerScript.cpp" />
+    <ClCompile Include="myCatPlayerScript.cpp">
+      <Filter>컴포넌트\스크립트</Filter>
+    </ClCompile>
+    <ClCompile Include="myRogueScript.cpp">
+      <Filter>컴포넌트\스크립트</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="myPlayerScript.h">
@@ -34,7 +39,12 @@
     <ClInclude Include="myTitleScene.h">
       <Filter>씬</Filter>
     </ClInclude>
-    <ClInclude Include="myCatPlayerScript.h" />
+    <ClInclude Include="myCatPlayerScript.h">
+      <Filter>컴포넌트\스크립트</Filter>
+    </ClInclude>
+    <ClInclude Include="myRogueScript.h">
+      <Filter>컴포넌트\스크립트</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="컴포넌트">

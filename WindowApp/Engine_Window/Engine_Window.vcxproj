@@ -25,6 +25,7 @@
     <ClInclude Include="myPlayer.h" />
     <ClInclude Include="myPlayerScript.h" />
     <ClInclude Include="myPlayScene.h" />
+    <ClInclude Include="myRogueScript.h" />
     <ClInclude Include="myTitleScene.h" />
   </ItemGroup>
   <ItemGroup>
@@ -32,6 +33,7 @@
     <ClCompile Include="myPlayer.cpp" />
     <ClCompile Include="myPlayerScript.cpp" />
     <ClCompile Include="myPlayScene.cpp" />
+    <ClCompile Include="myRogueScript.cpp" />
     <ClCompile Include="myTitleScene.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
