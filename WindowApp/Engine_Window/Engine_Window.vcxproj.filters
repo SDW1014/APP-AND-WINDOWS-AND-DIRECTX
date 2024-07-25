@@ -1,15 +1,56 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="myPlayer.cpp" />
-    <ClCompile Include="myPlayScene.cpp" />
-    <ClCompile Include="myTitleScene.cpp" />
+    <ClCompile Include="myPlayerScript.cpp">
+      <Filter>컴포넌트\스크립트</Filter>
+    </ClCompile>
+    <ClCompile Include="myPlayer.cpp">
+      <Filter>게임오브젝트</Filter>
+    </ClCompile>
+    <ClCompile Include="myPlayScene.cpp">
+      <Filter>씬</Filter>
+    </ClCompile>
+    <ClCompile Include="myTitleScene.cpp">
+      <Filter>씬</Filter>
+    </ClCompile>
+    <ClCompile Include="myCatPlayerScript.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="myLoadScenes.h" />
-    <ClInclude Include="myPlayer.h" />
-    <ClInclude Include="myPlayScene.h" />
-    <ClInclude Include="myTitleScene.h" />
-    <ClInclude Include="myLoadResources.h" />
+    <ClInclude Include="myPlayerScript.h">
+      <Filter>컴포넌트\스크립트</Filter>
+    </ClInclude>
+    <ClInclude Include="myLoadResources.h">
+      <Filter>초기로드</Filter>
+    </ClInclude>
+    <ClInclude Include="myLoadScenes.h">
+      <Filter>초기로드</Filter>
+    </ClInclude>
+    <ClInclude Include="myPlayer.h">
+      <Filter>게임오브젝트</Filter>
+    </ClInclude>
+    <ClInclude Include="myPlayScene.h">
+      <Filter>씬</Filter>
+    </ClInclude>
+    <ClInclude Include="myTitleScene.h">
+      <Filter>씬</Filter>
+    </ClInclude>
+    <ClInclude Include="myCatPlayerScript.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="컴포넌트">
+      <UniqueIdentifier>{1eddfb94-2c08-4a4d-81d7-d90f099e9827}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="컴포넌트\스크립트">
+      <UniqueIdentifier>{7dd99644-1df5-4413-b640-920e36e3ba55}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="초기로드">
+      <UniqueIdentifier>{2576c468-5aa0-49c9-abf5-2f531a921e2b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="게임오브젝트">
+      <UniqueIdentifier>{bd1f9e56-f0a1-4e01-b279-8bc1c6a6086f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="씬">
+      <UniqueIdentifier>{7bb0064a-c39c-48d7-8885-e4156792941d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>
