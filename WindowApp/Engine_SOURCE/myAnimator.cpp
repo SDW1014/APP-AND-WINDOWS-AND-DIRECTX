@@ -66,7 +66,7 @@ namespace MyApp {
     {
         Animation* animation = FindAnimation(name);
 
-        if(animation == nullptr)
+        if(animation == nullptr || animation == mActiveAnimation)
             return;
 
         mActiveAnimation = animation;
