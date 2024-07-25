@@ -14,6 +14,7 @@
 #include "myRenderer.h"
 #include "myAnimator.h"
 #include "myCatPlayerScript.h"
+#include "myRogueScript.h"
 
 namespace MyApp
 {
@@ -36,12 +37,12 @@ namespace MyApp
 		mPlayer = object::Instantiate<Player>(enums::eLayerType::Player);
 
 		Animator* animator = mPlayer->AddComponent<Animator>();
-        graphics::Texture* rogueTexture = Resources::Find<graphics::Texture>(L"Rogue2");
+        graphics::Texture* rogueTexture = Resources::Find<graphics::Texture>(L"Rogue");
 
         animator->CreateAnimation(L"RogueFrontMove", rogueTexture, Vector2(0.f, 0.f), Vector2(32.f, 32.f), Vector2::Zero, 10, 0.3f);
         animator->PlayAnimation(L"RogueFrontMove", true);
 
-		mPlayer->AddComponent<CatPlayerScript>();
+		mPlayer->AddComponent<RogueScript>();
 		
 		
 
