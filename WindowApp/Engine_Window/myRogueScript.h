@@ -15,9 +15,14 @@ namespace MyApp
 			virtual void Render(HDC hdc) override;
 
 			void speedDownUpdate();
+			void UpdateAnimationBasedOnDirection();
+
+			bool isRight() { return mIsRight; }
+			void setIsRight(bool isRight) { mIsRight = isRight; }
 
 		private:
 			Vector2 mSpeed;
+			bool mIsRight;
 	};
 }
 

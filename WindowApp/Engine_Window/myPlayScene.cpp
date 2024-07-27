@@ -39,8 +39,12 @@ namespace MyApp
 		Animator* animator = mPlayer->AddComponent<Animator>();
         graphics::Texture* rogueTexture = Resources::Find<graphics::Texture>(L"Rogue");
 
-        animator->CreateAnimation(L"RogueFrontMove", rogueTexture, Vector2(0.f, 0.f), Vector2(32.f, 32.f), Vector2::Zero, 10, 0.3f);
-        animator->PlayAnimation(L"RogueFrontMove", true);
+        animator->CreateAnimation(L"RogueRightStandMove1", rogueTexture, Vector2(0.f, 0.f), Vector2(32.f, 32.f), Vector2::Zero, 10, 0.2f);
+		animator->CreateAnimation(L"RogueRightStandMove2", rogueTexture, Vector2(0.f, 32.f), Vector2(32.f, 32.f), Vector2::Zero, 10, 0.2f);
+		animator->CreateReverseAnimation(L"RogueLeftStandMove1", rogueTexture, Vector2(0.f, 32.f * 10.f), Vector2(32.f, 32.f), Vector2::Zero, 10, 0.2f);
+		animator->CreateAnimation(L"RogueRightMove", rogueTexture, Vector2(0.f, 64.f), Vector2(32.f, 32.f), Vector2::Zero, 10, 0.2f);
+		animator->CreateReverseAnimation(L"RogueLeftMove", rogueTexture, Vector2(0.f, 32.f * 12.f), Vector2(32.f, 32.f), Vector2::Zero, 10, 0.2f);
+        animator->PlayAnimation(L"RogueLeftStandMove1", true);
 
 		mPlayer->AddComponent<RogueScript>();
 		
