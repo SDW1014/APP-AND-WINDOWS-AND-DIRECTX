@@ -55,6 +55,20 @@ namespace MyApp {
         
         mAnimations.insert(std::make_pair(name, animation));
     }
+    void Animator::CreateReverseAnimation(const std::wstring& name, graphics::Texture* spriteSheet, Vector2 leftTop, Vector2 size, Vector2 offset, UINT spriteLength, float duration)
+    {
+        Animation* animation = nullptr;
+        animation = FindAnimation(name);
+        if(animation != nullptr)
+            return;
+        
+        animation = new Animation();
+        animation->CreateReverseAnimation(name, spriteSheet, leftTop, size, offset, spriteLength, duration);
+        
+        animation->SetAnimator(this);
+        
+        mAnimations.insert(std::make_pair(name, animation));
+    }
     Animation* Animator::FindAnimation(const std::wstring& name)
     {
         auto iter = mAnimations.find(name);
