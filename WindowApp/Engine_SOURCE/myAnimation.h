@@ -33,6 +33,8 @@ namespace MyApp
 
         void CreateAnimation(const std::wstring& name, graphics::Texture* spriteSheet, Vector2 leftTop, Vector2 size, Vector2 offset, UINT spriteLength, float duration);
 
+        void CreateReverseAnimation(const std::wstring& name, graphics::Texture* spriteSheet, Vector2 leftTop, Vector2 size, Vector2 offset, UINT spriteLength, float duration);
+
         void Reset();
 
         bool IsComplete() { return mbComplete; }

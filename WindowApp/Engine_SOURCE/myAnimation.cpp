@@ -87,6 +87,20 @@ namespace MyApp {
             mAnimationSheet.push_back(sprite);
         }
     }
+    void Animation::CreateReverseAnimation(const std::wstring& name, graphics::Texture* spriteSheet, Vector2 leftTop, Vector2 size, Vector2 offset, UINT spriteLength, float duration)
+    {
+        mTexture = spriteSheet;
+        for (size_t i = spriteLength; i > 0; i--)
+        {
+            Sprite sprite;
+            sprite.leftTop = Vector2(leftTop.x + (size.x * (i - 1)), leftTop.y);
+            sprite.size = size;
+            sprite.offset = offset;
+            sprite.duration = duration;
+
+            mAnimationSheet.push_back(sprite);
+        }
+    }
 
     void Animation::Reset()
     {
