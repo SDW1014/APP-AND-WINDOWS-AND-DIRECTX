@@ -36,7 +36,6 @@ namespace MyApp
 		case MyApp::PlayerScript::eState::Walk:
 			move();
 			break;
-
 		case MyApp::PlayerScript::eState::Sleep:
 			break;
 		case MyApp::PlayerScript::eState::Attack:
