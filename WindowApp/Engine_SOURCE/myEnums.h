@@ -26,6 +26,7 @@ namespace MyApp::enums
 		//Tree 		// 나무 레이어
 		//character // 캐릭터 레이어
 		Player,		// 플레이어 레이어
+		Particle,   // 파티클 레이어
 		Max = 16,	// 최대 레이어 수
 	};
 
