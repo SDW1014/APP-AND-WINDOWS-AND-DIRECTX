@@ -15,6 +15,8 @@ namespace MyApp
 		const std::wstring& GetPath() { return mPath; }
 		void SetPath(const std::wstring& path) { mPath = path; }
 
+		
+
 	private:
 		const enums::eResourceType mType;
 		std::wstring mPath;

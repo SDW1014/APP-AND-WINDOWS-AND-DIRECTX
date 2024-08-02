@@ -19,6 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="myCat.h" />
+    <ClInclude Include="myCatScript.h" />
     <ClInclude Include="myLoadResources.h" />
     <ClInclude Include="myLoadScenes.h" />
     <ClInclude Include="myPlayer.h" />
@@ -27,6 +29,8 @@
     <ClInclude Include="myTitleScene.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="myCat.cpp" />
+    <ClCompile Include="myCatScript.cpp" />
     <ClCompile Include="myPlayer.cpp" />
     <ClCompile Include="myPlayerScript.cpp" />
     <ClCompile Include="myPlayScene.cpp" />

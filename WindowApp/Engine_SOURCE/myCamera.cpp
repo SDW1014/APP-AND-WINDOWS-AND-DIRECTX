@@ -3,6 +3,7 @@
 #include "myTransform.h"
 #include "myApplication.h"
 
+
 extern MyApp::Application application;
 
 namespace MyApp
@@ -11,7 +12,7 @@ namespace MyApp
         : Component(enums::eComponentType::Camera)
         , mDistance(Vector2::Zero)
         , mResolution(Vector2::Zero)
-        , mLookPostion(Vector2::Zero)
+        , mLookPosition(Vector2::Zero)
         , mTarget(nullptr)
     {
     }
@@ -31,13 +32,15 @@ namespace MyApp
         if(mTarget)
         {
             Transform* tr = mTarget->GetComponent<Transform>();
-            mLookPostion = tr->GetPosition();
+            mLookPosition = tr->GetPosition();
         }
+        else
+		{
+			Transform* cameraTr = GetOwner()->GetComponent<Transform>();
+			mLookPosition = cameraTr->GetPosition();
+		}
 
-        Transform* cameraTr = GetOwner()->GetComponent<Transform>();
-        mLookPostion = cameraTr->GetPosition();
-
-        mDistance = mLookPostion - (mResolution / 2.0f);
+        mDistance = mLookPosition - (mResolution / 2.0f);
     }
 
     void Camera::LateUpdate()

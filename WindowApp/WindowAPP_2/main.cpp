@@ -37,8 +37,12 @@ INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);
 //
 int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPWSTR    lpCmdLine, _In_ int       nCmdShow)
 {
+    // 이 코드는 이전 인스턴스와 명령줄 인수를 사용하지 않음을 나타냅니다.
+    // 메모리 할당 및 누수 검사 기능을 활성화합니다.
     UNREFERENCED_PARAMETER(hPrevInstance);
     UNREFERENCED_PARAMETER(lpCmdLine);
+    _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+    //_CrtSetBreakAlloc(251); // 특정 메모리 할당에서 중단하도록 설정할 수 있습니다.
 
     // TODO: 여기에 코드를 입력합니다.
 
@@ -77,6 +81,9 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance
             application.Run();
         }
     }
+
+    Gdiplus::GdiplusShutdown(gpToken);
+    application.Release();
 
     return (int) msg.wParam;
 }

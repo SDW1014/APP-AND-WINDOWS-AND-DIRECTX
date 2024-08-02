@@ -12,6 +12,11 @@ namespace MyApp
 	// Scene 소멸자
 	Scene::~Scene()
 	{
+		for ( Layer* layer : mLayers)
+		{
+			delete layer;
+			layer = nullptr;
+		}
 	}
 	// Scene 초기화 함수
 	void Scene::Initialize()

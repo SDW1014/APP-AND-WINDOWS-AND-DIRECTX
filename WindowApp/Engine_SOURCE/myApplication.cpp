@@ -2,127 +2,107 @@
 #include "myInput.h"
 #include "myTime.h"
 #include "mySceneManager.h"
+#include "myResources.h"
 
 namespace MyApp
 {
-    // 1. Application 생성자
     Application::Application()
-        : mHwnd(nullptr)
-        , mHdc(nullptr)
-        , mWidth(0)
-        , mHeight(0)
-        , mBackHdc(nullptr)
-        , mBackBitmap(nullptr)
-    {
-    }
+		: mHwnd(nullptr)
+		, mHdc(nullptr)
+		, mWidth(0)
+		, mHeight(0)
+		, mBackHdc(NULL)
+		, mBackBitmap(NULL)
+	{
 
-    // 2. Application 소멸자
-    Application::~Application()
-    {
-    }
+	}
 
-    // 3. Initialize 함수
-    void Application::Initialize(HWND hwnd, UINT width, UINT height)
-    {
-        // 3.1. 윈도우 설정 및 초기화
-        adjustWindowRect(hwnd, width, height);
-        createBuffer(width, height);
-        initializeEtc();
+	Application::~Application()
+	{
 
-        // 3.2. SceneManager 초기화
-        SceneManager::Initialize();
-    }
+	}
+	void Application::Initialize(HWND hwnd, UINT width, UINT height)
+	{
+		adjustWindowRect(hwnd, width, height);
+		createBuffer(width, height);
+		initializeEtc();
 
-    // 4. Run 함수 (게임 루프)
-    void Application::Run()
-    {
-        // 4.1. Update 함수 호출
-        Update();
-        // 4.2. LateUpdate 함수 호출
-        LateUpdate();
-        // 4.3. Render 함수 호출
-        Render();
-    }
+		SceneManager::Initialize();
+	}
+	void Application::Run()
+	{
+		Update();
+		LateUpdate();
+		Render();
+	}
+	void Application::Update()
+	{
+		Input::Update();
+		Time::Update();
 
-    // 5. Update 함수
-    void Application::Update()
-    {
-        // 5.1. 입력 업데이트
-        Input::Update();
-        // 5.2. 시간 업데이트
-        Time::Update();
+		SceneManager::Update();
+	}
+	void Application::LateUpdate()
+	{
+		SceneManager::LateUpdate();
+	}
+	void Application::Render()
+	{
+		clearRenderTarget();
 
-        // 5.3. SceneManager를 통한 현재 씬 업데이트
-        SceneManager::Update();
-    }
+		Time::Render(mBackHdc);
+		SceneManager::Render(mBackHdc);
 
-    // 6. LateUpdate 함수 (현재 비어있음)
-    void Application::LateUpdate()
-    {
-        SceneManager::LateUpdate();
-    }
+		copyRenderTarget(mBackHdc, mHdc);
+	}
 
-    // 7. Render 함수
-    void Application::Render()
-    {
-        // 7.1. 렌더링 시작
-        clearRenderTarget();
+	void Application::Release()
+	{
+		SceneManager::Release();
+		Resources::Release();
+	}
 
-        // 7.2. 시간 정보 렌더링
-        Time::Render(mBackHdc);
+	void Application::clearRenderTarget()
+	{
+		//clear
+		Rectangle(mBackHdc, -1, -1, 1601, 901);
+	}
 
-        // 7.3. SceneManager를 통한 현재 씬 렌더링
-        SceneManager::Render(mBackHdc);
+	void Application::copyRenderTarget(HDC source, HDC dest)
+	{
+		BitBlt(dest, 0, 0, mWidth, mHeight
+			, source, 0, 0, SRCCOPY);
+	}
 
-        // 7.4. 더블 버퍼링을 위한 백버퍼 복사
-        copyRenderTarget(mBackHdc, mHdc);
-    }
+	void Application::adjustWindowRect(HWND hwnd, UINT width, UINT height)
+	{
+		mHwnd = hwnd;
+		mHdc = GetDC(hwnd);
 
-    // 8. clearRenderTarget 함수
-    void Application::clearRenderTarget()
-    {
-        Rectangle(mBackHdc, -1, -1, 1601, 901);
-    }
+		RECT rect = { 0, 0, width, height };
+		AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, false);
 
-    // 9. copyRenderTarget 함수
-    void Application::copyRenderTarget(HDC source, HDC dest)
-    {
-        BitBlt(dest, 0, 0, mWidth, mHeight, source, 0, 0, SRCCOPY);
-    }
+		mWidth = rect.right - rect.left;
+		mHeight = rect.bottom - rect.top;
 
-    // 10. adjustWindowRect 함수
-    void Application::adjustWindowRect(HWND hwnd, UINT width, UINT height)
-    {
-        mHwnd = hwnd;
-        mHdc = GetDC(hwnd);
+		SetWindowPos(hwnd, nullptr, 0, 0, mWidth, mHeight, 0);
+		ShowWindow(hwnd, true);
+	}
 
-        RECT rect = { 0, 0, width, height };
-        AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, false);
+	void Application::createBuffer(UINT width, UINT height)
+	{
+		mBackBitmap = CreateCompatibleBitmap(mHdc, width, height);
+		mBackHdc = CreateCompatibleDC(mHdc);
 
-        mWidth = rect.right - rect.left;
-        mHeight = rect.bottom - rect.top;
+		HBITMAP oldBitmap = (HBITMAP)SelectObject(mBackHdc, mBackBitmap);
+		DeleteObject(oldBitmap);
+	}
 
-        SetWindowPos(hwnd, nullptr, 0, 0, mWidth, mHeight, 0);
-
-        ShowWindow(hwnd, true);
-    }
-
-    // 11. createBuffer 함수
-    void Application::createBuffer(UINT width, UINT height)
-    {
-        mBackBitmap = CreateCompatibleBitmap(mHdc, width, height);
-        mBackHdc = CreateCompatibleDC(mHdc);
-
-        HBITMAP oldBitmap = (HBITMAP)SelectObject(mBackHdc, mBackBitmap);
-        DeleteObject(oldBitmap);
-    }
-
-    // 12. initializeEtc 함수
-    void Application::initializeEtc()
-    {
-        Input::Initialize();
-        Time::Initialize();
-    }
+	void Application::initializeEtc()
+	{
+		Input::Initailize();
+		Time::Initailize();
+	}
 }
 
 // 이 파일은 MyApp 네임스페이스 내에서 Application 클래스를 정의하고 구현합니다. 

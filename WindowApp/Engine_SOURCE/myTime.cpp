@@ -1,5 +1,6 @@
 #include "myTime.h"
 
+
 namespace MyApp
 {
 	LARGE_INTEGER Time::CpuFrequency = {};
@@ -7,12 +8,12 @@ namespace MyApp
 	LARGE_INTEGER Time::CurrentFrequency = {};
 	float Time::DeltaTimeValue = 0.0f;
 
-	void Time::Initialize()
+	void Time::Initailize()
 	{
-		// ³ªÀÇ CPUÀÇ °íÀ¯ Áøµ¿¼ö¸¦ °¡Á®¿Â´Ù.
+		// Cpu ê³ ìœ  ì§„ë™ìˆ˜
 		QueryPerformanceFrequency(&CpuFrequency);
-		
-		// ÀÌÀü ½Ã°£À» °¡Á®¿Â´Ù.
+
+		// í”„ë¡œê·¸ë¨ì´ ì‹œì‘ í–ˆì„ ë•Œ í˜„ì¬ ì§„ë™ìˆ˜
 		QueryPerformanceCounter(&PrevFrequency);
 	}
 
@@ -20,11 +21,9 @@ namespace MyApp
 	{
 		QueryPerformanceCounter(&CurrentFrequency);
 
-		// ÀÌÀü ½Ã°£°ú ÇöÀç ½Ã°£ÀÇ Â÷ÀÌ¸¦ ±¸ÇÑ´Ù.
-		float diffrenctFrequency = static_cast<float>(CurrentFrequency.QuadPart - PrevFrequency.QuadPart);
-
-		DeltaTimeValue = diffrenctFrequency / static_cast<float>(CpuFrequency.QuadPart);
-
+		float differenceFrequency
+			= static_cast<float>(CurrentFrequency.QuadPart - PrevFrequency.QuadPart);
+		DeltaTimeValue = differenceFrequency / static_cast<float>(CpuFrequency.QuadPart);
 		PrevFrequency.QuadPart = CurrentFrequency.QuadPart;
 	}
 	void Time::Render(HDC hdc)
@@ -32,17 +31,12 @@ namespace MyApp
 		static float time = 0.0f;
 
 		time += DeltaTimeValue;
-		// fps¸¦ ¸¸µé¾îº¸ÀÚ.
 		float fps = 1.0f / DeltaTimeValue;
 
 		wchar_t str[50] = L"";
-
-		swprintf_s(str, 50, L"FPS : %d", static_cast<int>(fps));
-
+		swprintf_s(str, 50, L"Time : %d", (int)fps);
 		int len = wcsnlen_s(str, 50);
 
 		TextOut(hdc, 0, 0, str, len);
 	}
 }
-
-

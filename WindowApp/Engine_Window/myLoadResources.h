@@ -6,11 +6,8 @@ namespace MyApp
 {
 	void LoadResources()
 	{
-		Resources::Load<graphics::Texture>(L"Map", L"C:\\Users\\82102\\source\\repos\\2024-07-09\\WindowApp\\Recources\\img\\map\\map_pure.png");
-		Resources::Load<graphics::Texture>(L"PackMan", L"C:\\Users\\82102\\source\\repos\\2024-07-09\\WindowApp\\Recources\\img\\pacman\\0.png");
-		Resources::Load<graphics::Texture>(L"Cat", L"C:\\Users\\82102\\source\\repos\\2024-07-09\\WindowApp\\Recources\\ChickenAlpha.bmp");
-		Resources::Load<graphics::Texture>(L"Bubble", L"C:\\Users\\82102\\source\\repos\\2024-07-09\\WindowApp\\Recources\\Bubble.png");
-		Resources::Load<graphics::Texture>(L"MapleEffect", L"C:\\Users\\82102\\source\\repos\\2024-07-09\\WindowApp\\Recources\\ezgif.com-gif-maker.png");
+		Resources::Load<graphics::Texture>(L"Cat", L"..\\Recources\\ChickenAlpha.bmp");
+		Resources::Load<graphics::Texture>(L"Player", L"..\\Recources\\Player.bmp");
 	}
 }
 

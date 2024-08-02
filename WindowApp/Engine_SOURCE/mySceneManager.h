@@ -34,6 +34,9 @@ namespace MyApp
 		// SceneManager를 렌더링하는 함수입니다.
 		static void Render(HDC hdc);
 
+		static void Release();
+
+
 	private:
 		// 씬 이름과 씬 포인터를 저장하는 맵입니다.
 		static std::map<std::wstring, Scene*> mScene;
