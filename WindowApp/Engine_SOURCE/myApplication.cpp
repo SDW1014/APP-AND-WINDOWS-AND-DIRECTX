@@ -34,6 +34,8 @@ namespace MyApp
 		Update();
 		LateUpdate();
 		Render();
+
+		Destroy();
 	}
 	void Application::Update()
 	{
@@ -54,6 +56,11 @@ namespace MyApp
 		SceneManager::Render(mBackHdc);
 
 		copyRenderTarget(mBackHdc, mHdc);
+	}
+
+	void Application::Destroy()
+	{
+		SceneManager::Destroy();
 	}
 
 	void Application::Release()
