@@ -7,6 +7,17 @@ namespace MyApp
 	class GameObject
 	{
 	public:
+		//friend void Destory(GameObject* obj);
+		//friend Component; friend Ŭ���� ����
+
+		enum class eState
+		{
+			Active,
+			Paused,
+			Dead,
+			End
+		};
+
 		GameObject();
 		~GameObject();
 
@@ -40,10 +51,20 @@ namespace MyApp
 
 			return component;
 		}
+
+		eState GetActive() { return mState; }
+		void SetActive(bool power)
+		{
+			if (power == true) mState = eState::Active; 
+			if (power == false) mState = eState::Paused;
+		}
+		void Death() { mState = eState::Dead; }
+
 	private:
 		void initializeTransform();
 
 	private:
+		eState mState;
 		std::vector<Component*> mComponents;
 	};
 }

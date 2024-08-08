@@ -7,6 +7,7 @@ namespace MyApp
 {
 	// GameObject 클래스의 생성자
 	GameObject::GameObject()
+		: mState(eState::Active)
 	{
 		mComponents.resize((UINT)enums::eComponentType::End);
 		initializeTransform();
