@@ -50,50 +50,61 @@ namespace MyApp {
 
     void Animation::Render(HDC hdc)
     {
-        //AlphaBlend(125, );
-        if(mTexture == nullptr)
+        if (mTexture == nullptr)
             return;
-        
-        GameObject* gameObj = mAnimator->GetOwner();
+
+        GameObject*  gameObj = mAnimator->GetOwner();
         Transform* tr = gameObj->GetComponent<Transform>();
         Vector2 pos = tr->GetPosition();
         float rot = tr->GetRoation();
         Vector2 scale = tr->GetScale();
 
-        if(renderer::mainCamera)
-            pos = renderer::mainCamera->CaluatePostion(pos);
+        if (renderer::mainCamera)
+            pos = renderer::mainCamera->CaluatePosition(pos);
 
         Sprite sprite = mAnimationSheet[mIndex];
         graphics::Texture::eTextureType type = mTexture->GetTextureType();
         if (type == graphics::Texture::eTextureType::Bmp)
         {
-            BLENDFUNCTION func = {};
-            func.BlendOp = AC_SRC_OVER;
-            func.BlendFlags = 0;
-            func.AlphaFormat = AC_SRC_ALPHA;
-            func.SourceConstantAlpha = 125; // 0(transparent) ~ 255(Opaque)
+            //BLENDFUNCTION func = {};
+            //func.BlendOp = AC_SRC_OVER;
+            //func.BlendFlags = 0;
+            //func.AlphaFormat = AC_SRC_ALPHA;
+            //func.SourceConstantAlpha = 255; // 0(transparent) ~ 255(Opaque)
 
-
+            //
             HDC imgHdc = mTexture->GetHdc();
 
-            AlphaBlend(hdc
-                , pos.x - (sprite.size.x / 2.0f)
-                , pos.y - (sprite.size.y / 2.0f)
-                , sprite.size.x * scale.x
-                , sprite.size.y * scale.y
-                , imgHdc
-                , sprite.leftTop.x
-                , sprite.leftTop.y
-                , sprite.size.x
-                , sprite.size.y
-                , func);
+            //AlphaBlend(hdc
+            //    , pos.x - (sprite.size.x / 2.0f)
+            //    , pos.y - (sprite.size.y / 2.0f)
+            //    , sprite.size.x * scale.x
+            //    , sprite.size.y * scale.y
+            //    , imgHdc
+            //    , sprite.leftTop.x
+            //    , sprite.leftTop.y
+            //    , sprite.size.x
+            //    , sprite.size.y
+            //    , func);
+
+            TransparentBlt(hdc
+                    , pos.x - (sprite.size.x / 2.0f)
+                    , pos.y - (sprite.size.y / 2.0f)
+                    , sprite.size.x * scale.x
+                    , sprite.size.y * scale.y
+                    , imgHdc
+                    , sprite.leftTop.x
+                    , sprite.leftTop.y
+                    , sprite.size.x
+                    , sprite.size.y
+                    , RGB(255, 0, 255));
         }
         else if (type == graphics::Texture::eTextureType::Png)
         {
-            // 내가 원하는 픽셀을 투명화 시킬
+            // ���� ���ϴ� �ȼ��� ����ȭ ��ų��
             Gdiplus::ImageAttributes imgAtt = {};
 
-            // 투명화 시킬 픽셀의 색 범위
+            // ����ȭ ��ų �ȼ��� �� ����
             imgAtt.SetColorKey(Gdiplus::Color(230, 230, 230), Gdiplus::Color(255, 255, 255));
 
             Gdiplus::Graphics graphics(hdc);
@@ -118,8 +129,6 @@ namespace MyApp {
                 , /*&imgAtt*/nullptr
             );
         }
-
-        
     }
 
     void Animation::CreateAnimation(const std::wstring& name, graphics::Texture* spriteSheet, Vector2 leftTop, Vector2 size, Vector2 offset, UINT spriteLength, float duration)
