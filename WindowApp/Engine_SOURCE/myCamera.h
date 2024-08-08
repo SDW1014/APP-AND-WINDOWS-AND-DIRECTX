@@ -7,7 +7,7 @@ namespace MyApp
     class Camera : public Component
     {
     public:
-        Vector2 CaluatePostion(Vector2 pos) {return pos - mDistance;};
+		Vector2 CaluatePosition(Vector2 pos) { return pos - mDistance; };
 
         Camera();
         ~Camera();

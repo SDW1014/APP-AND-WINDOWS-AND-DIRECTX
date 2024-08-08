@@ -16,17 +16,14 @@ namespace MyApp
         , mTarget(nullptr)
     {
     }
-
     Camera::~Camera()
     {
     }
-
     void Camera::Initialize()
     {
         mResolution.x = application.GetWidth();
         mResolution.y = application.GetHeight();
     }
-
     void Camera::Update()
     {
         if(mTarget)
@@ -42,12 +39,10 @@ namespace MyApp
 
         mDistance = mLookPosition - (mResolution / 2.0f);
     }
-
     void Camera::LateUpdate()
     {
 
     }
-
     void Camera::Render(HDC hdc)
     {
     }
