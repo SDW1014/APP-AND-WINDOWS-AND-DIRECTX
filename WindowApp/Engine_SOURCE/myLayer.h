@@ -22,6 +22,7 @@ namespace MyApp
 		virtual void LateUpdate();
 		// 렌더링 함수
 		virtual void Render(HDC hdc);
+		virtual void Destroy();
 
 		// 게임 오브젝트 추가 함수
 		void AddGameObject(GameObject* gameObject);
@@ -32,4 +33,6 @@ namespace MyApp
 		// 게임 오브젝트 벡터
 		std::vector<GameObject*> mGameObjects;
 	};
+
+	typedef std::vector<GameObject*>::iterator GameObjectIter;
 }
