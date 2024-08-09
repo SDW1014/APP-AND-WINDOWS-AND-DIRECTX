@@ -67,7 +67,17 @@ namespace MyApp
 		}
 	}
 
-	// 특정 레이어에 게임 오브젝트를 추가하는 함수
+	void Scene::Destroy()
+	{
+		for (Layer* layer : mLayers)
+		{
+			if (layer == nullptr)
+				continue;
+
+			layer->Destroy();
+		}
+	}
+
 	void Scene::AddGameObject(GameObject* gameObj, const enums::eLayerType type)
 	{
 		mLayers[(UINT)type]->AddGameObject(gameObj);

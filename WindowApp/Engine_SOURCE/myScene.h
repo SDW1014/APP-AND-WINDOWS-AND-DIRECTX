@@ -22,6 +22,7 @@ namespace MyApp
 		virtual void LateUpdate();
 		// 렌더링 함수
 		virtual void Render(HDC hdc);
+		virtual void Destroy();
 
 		// 씬 진입 시 호출
 		virtual void OnEnter();
