@@ -4,13 +4,14 @@
 #include "myTime.h"
 #include "myGameObject.h"
 #include "myAnimator.h"
-
+#include "myObject.h"
 namespace MyApp
 {
 	CatScript::CatScript()
 		: mState(CatScript::eState::SitDown)
 		, mAnimator(nullptr)
 		, mTime(0.0f)
+		, mDeathTime(0.0f)
 	{
 	}
 	CatScript::~CatScript()
@@ -23,11 +24,18 @@ namespace MyApp
 	}
 	void CatScript::Update()
 	{
+		mDeathTime += Time::DeltaTime();
+		if (mDeathTime > 6.0f)
+		{
+			//object::Destory(GetOwner());
+		}
+
 		if (mAnimator == nullptr)
 		{
 			mAnimator = GetOwner()->GetComponent<Animator>();
 		}
-
+		//new char[1000000];
+		//new
 		switch (mState)
 		{
 		case MyApp::CatScript::eState::SitDown:
