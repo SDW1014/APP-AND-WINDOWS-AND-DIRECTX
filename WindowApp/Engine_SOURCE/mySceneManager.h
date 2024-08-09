@@ -33,6 +33,7 @@ namespace MyApp
 		static void LateUpdate();
 		// SceneManager를 렌더링하는 함수입니다.
 		static void Render(HDC hdc);
+		static void Destroy();
 
 		static void Release();
 
