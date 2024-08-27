@@ -5,7 +5,7 @@
 # [섹션 2. 윈도우 프로젝트 생성으로 이동](section2.md)
 - Winmain 설명
 
-# 섹션 3. 윈도우 API Main함수와 DC
+# [섹션 3. 윈도우 API Main함수와 DC](section3.md)
 - DC란 무엇인가?
 
 # 섹션 4. 라이브러리 및 프레임워크 구성
