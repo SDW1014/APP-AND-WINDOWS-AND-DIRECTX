@@ -26,23 +26,23 @@
 
 - **목적**: 게임 내에서 발생하는 물리적 상호작용과 이벤트를 실시간으로 처리하여, 게임 세계의 현실감과 몰입감을 높이기 위해. 이를 통해 사용자의 입력과 게임 내 이벤트가 실시간으로 화면에 반영되며, 동적이고 반응적인 게임 환경을 생성합니다.
 
- // Start of Selection
+
 ## 전역 변수 생성
-- **application**: 전역 변수로 생성하여 프로그램 전반에서 사용합니다.
+- **<span style="color:red;">application</span>**: 전역 변수로 생성하여 프로그램 전반에서 사용합니다.
 
 ## 함수 구현
-- **initialize**: 초기 설정 및 변수 초기화.
-- **update**: 게임 상태 갱신.
-- **render**: 화면에 그래픽 요소 그리기.
+- **<span style="color:red;">initialize</span>**: 초기 설정 및 변수 초기화.
+- **<span style="color:red;">update</span>**: 게임 상태 갱신.
+- **<span style="color:red;">render</span>**: 화면에 그래픽 요소 그리기.
 
 ## 네임스페이스 도입
-- 코드 충돌을 방지하기 위해 **namespace**로 함수를 감싸서 사용합니다.
+- 코드 충돌을 방지하기 위해 **<span style="color:red;">namespace</span>**로 함수를 감싸서 사용합니다.
 
 ## 핸들(HANDLE)과 DC 관리
 - 핸들과 DC를 전역 변수로 저장하여, 반복적으로 가져오지 않고 효율적으로 관리합니다.
 
 ## 게임 루프 구현
-- **run** 함수에서 게임 루프를 구성하여 **update**와 **render** 함수를 반복 실행합니다.
+- **<span style="color:red;">run</span>** 함수에서 게임 루프를 구성하여 **<span style="color:red;">update</span>**와 **<span style="color:red;">render</span>** 함수를 반복 실행합니다.
 - 이를 통해 게임 캐릭터의 이동과 같은 상태 변경을 실시간으로 화면에 반영합니다.
 
 ## 최적화
