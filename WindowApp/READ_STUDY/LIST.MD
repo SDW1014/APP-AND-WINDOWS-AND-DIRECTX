@@ -14,7 +14,7 @@
 # [섹션 5. Application](section5.md)
 - Application 클래스
 
-# 섹션 6. GameObject
+# [섹션 6. GameObject](section6.md)
 - GameObject 클래스
 
 # 섹션 7. Input
