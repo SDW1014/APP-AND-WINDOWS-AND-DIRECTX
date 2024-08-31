@@ -34,8 +34,11 @@ namespace MyApp::object
 		return gameObject;
 	}
 
-	static void Destory(GameObject* obj)
-	{
-		obj->Death();
-	}
+	//static void Destory(GameObject* gameObject)
+	//{
+	//	if (gameObject == nullptr)
+	//		return;
+
+	//	gameObject->Death();
+	//}
 }

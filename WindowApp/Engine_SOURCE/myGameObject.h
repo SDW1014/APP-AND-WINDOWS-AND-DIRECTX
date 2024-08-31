@@ -1,13 +1,19 @@
 #pragma once
 #include "CommonInclude.h"
 #include "myComponent.h"
+//#include "yaObject.h"
+
+namespace MyApp::object
+{
+	void Destory(GameObject* gameObject);
+}
 
 namespace MyApp
 {
 	class GameObject
 	{
 	public:
-		//friend void Destory(GameObject* obj);
+		friend void object::Destory(GameObject* obj);
 		//friend Component; friend Ŭ���� ����
 
 		enum class eState
@@ -37,7 +43,6 @@ namespace MyApp
 
 			return comp;
 		}
-
 		template <typename T>
 		T* GetComponent()
 		{
@@ -52,21 +57,22 @@ namespace MyApp
 			return component;
 		}
 
-		eState GetActive() { return mState; }
+		eState GetState() { return mState; }
 		void SetActive(bool power)
 		{
 			if (power == true) mState = eState::Active; 
 			if (power == false) mState = eState::Paused;
 		}
-		void Death() { mState = eState::Dead; }
+		bool IsActive() { return mState == eState::Active; }
+		
+		bool IsDead() { return mState == eState::Dead; }
 
 	private:
 		void initializeTransform();
+		void death() { mState = eState::Dead; }
 
 	private:
 		eState mState;
 		std::vector<Component*> mComponents;
 	};
 }
-
-

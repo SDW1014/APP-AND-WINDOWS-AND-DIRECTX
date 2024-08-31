@@ -6,8 +6,8 @@ namespace MyApp
 {
 	void LoadResources()
 	{
-		Resources::Load<graphics::Texture>(L"Cat", L"..\\Recources\\ChickenAlpha.bmp");
-		Resources::Load<graphics::Texture>(L"Player", L"..\\Recources\\Player.bmp");
+		Resources::Load<graphics::Texture>(L"Cat", L"..\\Resources\\ChickenAlpha.bmp");
+		Resources::Load<graphics::Texture>(L"Player", L"..\\Resources\\Player.bmp");
 	}
 }
 

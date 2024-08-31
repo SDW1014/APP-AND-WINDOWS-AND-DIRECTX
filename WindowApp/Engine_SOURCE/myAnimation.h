@@ -20,7 +20,9 @@ namespace MyApp
                 , size(Vector2::Zero)
                 , offset(Vector2::Zero)
                 , duration(0.0f)
-            {}
+			{
+
+			}
         };
 
         Animation();
@@ -31,7 +33,13 @@ namespace MyApp
         void Update();
         void Render(HDC hdc);
 
-        void CreateAnimation(const std::wstring& name, graphics::Texture* spriteSheet, Vector2 leftTop, Vector2 size, Vector2 offset, UINT spriteLength, float duration);
+		void CreateAnimation(const std::wstring& name
+			, graphics::Texture* spriteSheet
+			, Vector2 leftTop
+			, Vector2 sizei
+			, Vector2 offset
+			, UINT spriteLegth
+			, float duration);
 
         void Reset();
 

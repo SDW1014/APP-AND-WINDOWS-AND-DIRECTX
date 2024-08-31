@@ -1,15 +1,56 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="myPlayer.cpp" />
-    <ClCompile Include="myPlayScene.cpp" />
-    <ClCompile Include="myTitleScene.cpp" />
+    <ClCompile Include="myCat.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="myPlayer.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="myTitleScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="myCatScript.cpp">
+      <Filter>Script</Filter>
+    </ClCompile>
+    <ClCompile Include="myPlayerScript.cpp">
+      <Filter>Script</Filter>
+    </ClCompile>
+    <ClCompile Include="myPlayScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="myLoadScenes.h" />
-    <ClInclude Include="myPlayer.h" />
-    <ClInclude Include="myPlayScene.h" />
-    <ClInclude Include="myTitleScene.h" />
     <ClInclude Include="myLoadResources.h" />
+    <ClInclude Include="myCat.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="myPlayer.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="myTitleScene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="myCatScript.h">
+      <Filter>Script</Filter>
+    </ClInclude>
+    <ClInclude Include="myPlayerScript.h">
+      <Filter>Script</Filter>
+    </ClInclude>
+    <ClInclude Include="myPlayScene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{d2e098e5-1c58-47f5-b214-80a7bfa26098}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Script">
+      <UniqueIdentifier>{7d5eadf0-ff8f-419d-9d77-eb0b367c81af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object">
+      <UniqueIdentifier>{f458fb0c-d21f-4d2f-9305-1da0e02a5b32}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

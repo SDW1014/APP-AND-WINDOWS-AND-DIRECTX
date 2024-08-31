@@ -3,22 +3,17 @@
 
 namespace MyApp::enums
 {
-	/**
-	 * @brief 게임에서 사용되는 컴포넌트 타입을 정의합니다.
-	 */
 	enum class eComponentType
 	{
 		Transform,
+		Colider,
+		Script,
 		SpriteRenderer,
 		Animator,
-		Script,
 		Camera,
-		End
+		End,
 	};
 
-	/**
-	 * @brief 게임에서 사용되는 레이어 타입을 정의합니다.
-	 */
 	enum class eLayerType
 	{
 		None, 
@@ -31,9 +26,6 @@ namespace MyApp::enums
 		Max = 16,
 	};
 
-	/**
-	 * @brief 게임에서 사용되는 리소스 타입을 정의합니다.
-	 */
 	enum class eResourceType
 	{
 		Texture,    // 텍스처 리소스

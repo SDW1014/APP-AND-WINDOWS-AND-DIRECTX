@@ -5,7 +5,6 @@ namespace MyApp
 	std::map<std::wstring, Scene*> SceneManager::mScene = {};
 	Scene* SceneManager::mActiveScene = nullptr;
 
-	// 씬을 로드하는 함수입니다.
 	Scene* SceneManager::LoadScene(const std::wstring& name)
 	{
 		if (mActiveScene)
@@ -23,24 +22,20 @@ namespace MyApp
 		return iter->second;
 	}
 
-	// SceneManager를 초기화하는 함수입니다.
 	void SceneManager::Initialize()
 	{
 	}
 
-	// SceneManager를 업데이트하는 함수입니다.
 	void SceneManager::Update()
 	{
 		mActiveScene->Update();
 	}
 
-	// SceneManager를 늦게 업데이트하는 함수입니다.
 	void SceneManager::LateUpdate()
 	{
 		mActiveScene->LateUpdate();
 	}
 
-	// SceneManager를 렌더링하는 함수입니다.
 	void SceneManager::Render(HDC hdc)
 	{
 		mActiveScene->Render(hdc);
@@ -59,4 +54,5 @@ namespace MyApp
 			iter.second = nullptr;
 		}
 	}
+
 }

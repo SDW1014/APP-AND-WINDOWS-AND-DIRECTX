@@ -12,6 +12,8 @@ namespace MyApp
 		, mAnimator(nullptr)
 		, mTime(0.0f)
 		, mDeathTime(0.0f)
+		, mDest(Vector2::Zero)
+		, mRadian(0.0f)
 	{
 	}
 	CatScript::~CatScript()
@@ -65,14 +67,53 @@ namespace MyApp
 	void CatScript::sitDown()
 	{
 		mTime += Time::DeltaTime();
-		if (mTime > 3.0f)
+
+		if (mTime > 2.0f)
+		{
+			//object::Destory(GetOwner());
+		}
+
+
+		Transform* tr = GetOwner()->GetComponent<Transform>();
+		Vector2 pos = tr->GetPosition();
+
+		// ���콺 ��ġ �̵� ( ������ ���� Ȱ�� )
+		//Transform* plTr = mPlayer->GetComponent<Transform>();
+		//Vector2 dest = mDest - plTr->GetPosition();
+		//pos += dest.normalize() * (100.0f * Time::DeltaTime());
+
+
+		// �ﰢ�Լ��� ���� �̵�
+
+		//mRadian += 5.0f * Time::DeltaTime();
+		//pos += Vector2(1.0f, 2.0f * cosf(mRadian)) * (100.0f * Time::DeltaTime());
+
+
+		// ���콺 ��ġ �������� ȸ���� ���콺 ��ġ �̵� ( ������ ���� Ȱ�� )
+		//Transform* plTr = mPlayer->GetComponent<Transform>();
+		//Vector2 dest = mDest - plTr->GetPosition();
+		//dest.normalize();
+
+		//float rotDegree = Vector2::Dot(dest, Vector2::Right); //cos��Ÿ
+		//rotDegree = acosf(rotDegree);
+		//
+		//rotDegree = ConvertDegree(rotDegree);
+
+		//pos += dest * (100.0f * Time::DeltaTime());
+
+		//tr->SetPosition(pos);
+
+
+
+
+		/*if (mTime > 3.0f)
 		{
 			mState = CatScript::eState::Walk;
 			int direction = (rand() % 4);
 			mDirection = (eDirection)direction;
 			PlayWalkAnimationByDirection(mDirection);
 			mTime = 0.0f;
-		}
+		}*/
 	}
 
 	void CatScript::move()

@@ -48,6 +48,9 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)myRenderer.cpp">
       <Filter>렌더러</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)myBoxCollider2D.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)myCircleCollider2D.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)myCollider.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)myEntity.h" />
@@ -104,6 +107,9 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)myRenderer.h">
       <Filter>렌더러</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)myBoxCollider2D.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)myCircleCollider2D.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)myCollider.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="어플리케이션">
