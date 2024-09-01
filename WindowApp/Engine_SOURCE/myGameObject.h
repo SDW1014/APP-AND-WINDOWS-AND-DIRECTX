@@ -1,6 +1,7 @@
 #pragma once
 #include "CommonInclude.h"
 #include "myComponent.h"
+#include "myCollider.h"
 //#include "yaObject.h"
 
 namespace MyApp::object
@@ -66,7 +67,7 @@ namespace MyApp
 		bool IsActive() { return mState == eState::Active; }
 		
 		bool IsDead() { return mState == eState::Dead; }
-
+		
 	private:
 		void initializeTransform();
 		void death() { mState = eState::Dead; }

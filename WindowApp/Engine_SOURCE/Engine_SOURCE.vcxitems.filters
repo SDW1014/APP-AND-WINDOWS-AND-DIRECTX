@@ -61,6 +61,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)myAnimator.cpp">
       <Filter>애니메이션</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)myCollisionManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)myEntity.h" />
@@ -130,6 +131,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)myAnimator.h">
       <Filter>애니메이션</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)myCollisionManager.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="어플리케이션">

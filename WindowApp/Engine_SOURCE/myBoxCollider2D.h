@@ -15,6 +15,6 @@ namespace MyApp
 		virtual void Render(HDC hdc);
 
 	private:
-		Vector2 mSize;
+
 	};
 }

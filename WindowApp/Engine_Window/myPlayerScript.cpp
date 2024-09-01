@@ -8,7 +8,6 @@
 #include "myCatScript.h"
 #include "myObject.h"
 #include "myResources.h"
-
 namespace MyApp
 {
 	PlayerScript::PlayerScript()
@@ -22,7 +21,6 @@ namespace MyApp
 	void PlayerScript::Initialize()
 	{
 		
-
 	}
 	void PlayerScript::Update()
 	{
@@ -91,9 +89,21 @@ namespace MyApp
 		cat->GetComponent<Transform>()->SetPosition(tr->GetPosition());
 		cat->GetComponent<Transform>()->SetScale(Vector2(2.0f, 2.0f));
 
-
 		Vector2 mousePos = Input::GetMousePosition();
 		catSrc->mDest = mousePos;
+	}
+
+	void PlayerScript::OnCollisionEnter(Collider* other)
+	{
+		other->GetOwner()->GetComponent<Transform>()->SetPosition(Vector2(400.0f, 500.0f));
+	}
+
+	void PlayerScript::OnCollisionStay(Collider* other)
+	{
+	}
+
+	void PlayerScript::OnCollisionExit(Collider* other)
+	{
 	}
 
 	void PlayerScript::idle()
@@ -126,20 +136,12 @@ namespace MyApp
 
 			Transform* tr = GetOwner()->GetComponent<Transform>();
 
-			cat->GetComponent<Transform>()->SetPosition(tr->GetPosition() /*+ Vector2(100.0f, 0.0f)*/);
+			cat->GetComponent<Transform>()->SetPosition(tr->GetPosition());
 			cat->GetComponent<Transform>()->SetScale(Vector2(2.0f, 2.0f));
-
 
 			Vector2 mousePos = Input::GetMousePosition();
 			catSrc->mDest = mousePos;
-
-
-	/*		mState = PlayerScript::eState::GiveWater;
-			mAnimator->PlayAnimation(L"FrontGiveWater", false);
-
-			Vector2 mousePos = Input::GetMousePosition();*/
 		}
-
 
 		Transform* tr = GetOwner()->GetComponent<Transform>();
 		Vector2 pos = tr->GetPosition();
