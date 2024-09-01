@@ -1,6 +1,4 @@
 #pragma once
-
-
 namespace MyApp::enums
 {
 	enum class eComponentType
@@ -26,6 +24,8 @@ namespace MyApp::enums
 		Max = 16,
 	};
 
+//#define (UINT)(eLayerType::Max);
+
 	enum class eResourceType
 	{
 		Texture,    // 텍스처 리소스
@@ -34,5 +34,4 @@ namespace MyApp::enums
 		Prefab,     // 프리팹 리소스
 		End,        // 리소스 종료
 	};
-
 }

@@ -10,14 +10,12 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)myApplication.cpp">
       <Filter>어플리케이션</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)myAnimator.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)myCamera.cpp">
       <Filter>컴포넌트</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)myComponent.cpp">
       <Filter>컴포넌트</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)myAnimation.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)myScript.cpp">
       <Filter>컴포넌트</Filter>
     </ClCompile>
@@ -48,9 +46,21 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)myRenderer.cpp">
       <Filter>렌더러</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)myBoxCollider2D.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)myCircleCollider2D.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)myCollider.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)myBoxCollider2D.cpp">
+      <Filter>충돌</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)myCircleCollider2D.cpp">
+      <Filter>충돌</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)myCollider.cpp">
+      <Filter>충돌</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)myAnimation.cpp">
+      <Filter>애니메이션</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)myAnimator.cpp">
+      <Filter>애니메이션</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)myEntity.h" />
@@ -63,14 +73,12 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)myApplication.h">
       <Filter>어플리케이션</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)myAnimator.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)myCamera.h">
       <Filter>컴포넌트</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)myComponent.h">
       <Filter>컴포넌트</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)myAnimation.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)myScript.h">
       <Filter>컴포넌트</Filter>
     </ClInclude>
@@ -107,9 +115,21 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)myRenderer.h">
       <Filter>렌더러</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)myBoxCollider2D.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)myCircleCollider2D.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)myCollider.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)myBoxCollider2D.h">
+      <Filter>충돌</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)myCircleCollider2D.h">
+      <Filter>충돌</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)myCollider.h">
+      <Filter>충돌</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)myAnimation.h">
+      <Filter>애니메이션</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)myAnimator.h">
+      <Filter>애니메이션</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="어플리케이션">
@@ -135,6 +155,12 @@
     </Filter>
     <Filter Include="렌더러">
       <UniqueIdentifier>{8bf76cb5-6d2f-4bcf-be14-6fbb56e8abd7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="충돌">
+      <UniqueIdentifier>{2b9ec192-3c40-4308-a52b-fde9628ae9c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="애니메이션">
+      <UniqueIdentifier>{ac39162e-68eb-4f15-bebc-86c8f2a2e3b0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

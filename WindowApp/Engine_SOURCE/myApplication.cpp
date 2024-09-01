@@ -3,10 +3,11 @@
 #include "myTime.h"
 #include "mySceneManager.h"
 #include "myResources.h"
+#include "myCollisionManager.h"
 
 namespace MyApp
 {
-    Application::Application()
+	Application::Application()
 		: mHwnd(nullptr)
 		, mHdc(nullptr)
 		, mWidth(0)
@@ -27,6 +28,7 @@ namespace MyApp
 		createBuffer(width, height);
 		initializeEtc();
 
+		CollisionManager::Initialize();
 		SceneManager::Initialize();
 	}
 	void Application::Run()
@@ -41,11 +43,12 @@ namespace MyApp
 	{
 		Input::Update();
 		Time::Update();
-
+		CollisionManager::Update();
 		SceneManager::Update();
 	}
 	void Application::LateUpdate()
 	{
+		CollisionManager::LateUpdate();
 		SceneManager::LateUpdate();
 	}
 	void Application::Render()
@@ -53,6 +56,7 @@ namespace MyApp
 		clearRenderTarget();
 
 		Time::Render(mBackHdc);
+		CollisionManager::Render(mBackHdc);
 		SceneManager::Render(mBackHdc);
 
 		copyRenderTarget(mBackHdc, mHdc);
@@ -117,8 +121,3 @@ namespace MyApp
 		Time::Initailize();
 	}
 }
-
-// 이 파일은 MyApp 네임스페이스 내에서 Application 클래스를 정의하고 구현합니다. 
-// Application 클래스는 윈도우 애플리케이션의 초기화, 실행, 업데이트, 렌더링 등을 담당합니다. 
-// 주요 함수로는 Initialize, Run, Update, LateUpdate, Render 등이 있으며, 
-// 내부적으로 윈도우 설정, 버퍼 생성, 입력 및 시간 시스템 초기화 등을 수행합니다.
