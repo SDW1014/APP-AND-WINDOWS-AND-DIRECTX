@@ -3,6 +3,8 @@
 
 namespace MyApp
 {
+	using namespace enums;
+
 	class GameObject; // 전방 선언: GameObject 클래스가 존재함을 알림
 
 	// Component 클래스는 게임 객체의 컴포넌트로서 다양한 기능을 수행할 수 있도록 설계된 기본 클래스입니다.

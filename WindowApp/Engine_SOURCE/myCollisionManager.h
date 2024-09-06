@@ -1,8 +1,8 @@
 #pragma once
 #include "CommonInclude.h"
+ // Start of Selection
 #include "myBoxCollider2D.h"
 #include "myCircleCollider2D.h"
-
 
 namespace MyApp
 {
@@ -31,6 +31,9 @@ namespace MyApp
 		static void LayerCollision(class Scene* scene, eLayerType left, eLayerType right);
 		static void ColliderCollision(Collider* left, Collider* right);
 		static bool Intersect(Collider* left, Collider* right);
+
+	private:
+		//static bool isBump(Vector2 leftPos, Vector2 rigtPos, Vector2 leftSize, Vector2 rightSize);
 
 	private:
 		static std::bitset<(UINT)eLayerType::Max> mCollisionLayerMatrix[(UINT)eLayerType::Max];

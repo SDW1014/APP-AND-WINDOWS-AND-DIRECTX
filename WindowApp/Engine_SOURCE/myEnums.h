@@ -11,10 +11,10 @@ namespace MyApp::enums
 		Camera,
 		End,
 	};
-
+	
 	enum class eLayerType
 	{
-		None, 
+		None,
 		BackGround,
 		//Tree 
 		//character
@@ -28,10 +28,17 @@ namespace MyApp::enums
 
 	enum class eResourceType
 	{
-		Texture,    // 텍스처 리소스
-		AudioClip,  // 오디오 클립 리소스
-		Animation,  // 애니메이션 리소스
-		Prefab,     // 프리팹 리소스
-		End,        // 리소스 종료
+		Texture,
+		AudioClip,
+		Animation,
+		Prefab,
+		End,
+	};
+
+	enum class eColliderType
+	{
+		Circle2D,
+		Rect2D,
+		End,
 	};
 }

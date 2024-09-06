@@ -21,6 +21,9 @@ namespace MyApp
         // 렌더링 함수
         void Render(HDC hdc) override;
 
+        void OnEnter() override;
+		void OnExit() override;
+
     private:
 
     };
