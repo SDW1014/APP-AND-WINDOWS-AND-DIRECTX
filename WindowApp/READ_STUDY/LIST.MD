@@ -83,7 +83,7 @@
 - [충돌체](section23_1.md)
 - [충돌 매니저](section23_2.md)
 - [충돌 함수 호출](section23_3.md)
-- [부록( 원-원 충돌)](section23_4.md)
+- [부록(원-원 충돌)](section23_4.md)
 
 # 섹션 24. DontDestroyOnLoad 씬
 - DontDestroyOnLoad
